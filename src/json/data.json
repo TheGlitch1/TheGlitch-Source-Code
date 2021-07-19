@@ -1,0 +1,207 @@
+{
+  "settings": {
+    "about": {
+      "image": "settings\/December2019\/gfoBpRCXO3PaL0UISOjK.jpg",
+      "image_alt": "First Last Name Profile",
+      "signature": "settings\/December2019\/K9XU1etUzB4nzrJz0vAm.png",
+      "title": "About me",
+      "text": "<p>I'm a (mostly) self taught Software Engineer. Skilled in PHP, JS, Python, C++ and most Frontend Technologies. I'm actively looking for remote opportunities, if interested, contact me.<\/p>",
+      "button_1": {
+        "text": "Hire Me",
+        "link": "#contact"
+      },
+      "button_2": {
+        "text": "Resume",
+        "link": "https:\/\/Theglitch1.co\/storage\/CV%20Name%20NAme%20ENG.pdf"
+      }
+    },
+    "social": [
+      {
+        "text": "Twitter",
+        "icon": "ti-twitter",
+        "link": "https:\/\/www.twitter.com\/Theglitch1"
+      },
+      {
+        "text": "Linkedin",
+        "icon": "ti-linkedin",
+        "link": "https:\/\/www.linkedin.com\/in\/YassineNatij\/"
+      },
+      {
+        "text": "Instagram",
+        "icon": "ti-instagram",
+        "link": ""
+      },
+      {
+        "text": "Github",
+        "icon": "ti-github",
+        "link": "https:\/\/github.com\/TheGlitch1"
+      },
+      {
+        "text": "StackOverflow",
+        "icon": "ti-stack-overflow",
+        "link": "https:\/\/stackoverflow.com\/users\/3370660\/theglitch1"
+      },
+      {
+        "text": "Medium",
+        "icon": "fab fa-medium-m",
+        "link": "https:\/\/medium.com\/@Theglitch1"
+      }
+    ]
+  },
+  "data": {
+    "skills": [
+      {
+        "title": "PHP (LARAVEL, WORDPRESS..)",
+        "percentage": 98,
+        "position": "right"
+      },
+      {
+        "title": "Python",
+        "percentage": 90,
+        "position": "right"
+      },
+      {
+        "title": "JAVASCRIPT",
+        "percentage": 90,
+        "position": "right"
+      },
+      {
+        "title": "HTML & CSS | SASS",
+        "percentage": 100,
+        "position": "left"
+      },
+      {
+        "title": "SQL (MYSQL, PostgreSQL..)",
+        "percentage": 85,
+        "position": "left"
+      },
+      {
+        "title": "WEB DESIGN",
+        "percentage": 70,
+        "position": "left"
+      },
+      {
+        "title": "C++",
+        "percentage": 80,
+        "position": "right"
+      },
+      {
+        "title": "SharePoint Platform",
+        "percentage": 85,
+        "position": "left"
+      }
+    ],
+    "interests": [
+      {
+        "title": "Electronics & DIY",
+        "text": "Lorem ipsum dolor amet, consecte tempor incididunt ut labore dolore ber tur adipisicing elit.",
+        "icon": "fa fa-bolt"
+      },
+      {
+        "title": "Hacking & CTFs",
+        "text": "Lorem ipsum dolor amet, consecte tempor incididunt ut labore dolore ber tur adipisicing elit.",
+        "icon": "fa fa-flag"
+      },
+      {
+        "title": "Machine Learning & AI",
+        "text": "Lorem ipsum dolor amet, consecte tempor incididunt ut labore dolore ber tur adipisicing elit.",
+        "icon": "fa fa-robot"
+      }
+    ],
+    "resume": {
+      "education": [
+        {
+          "order": 0,
+          "date": "September 2009 - 2014 Novemebre.",
+          "title": "Software Engineering",
+          "icon": null,
+          "subtitle": "Gained and integrate knowledge from various subject areas including computer programming, data structures, algorithms, numerical methods, statistics, design patterns, human-computer interaction, computer graphics, information visualization, database systems, web development, software project management, and software engineering.",
+          "location": "High-Tech - Rabat, Morocco"
+        },
+        {
+          "order": 1,
+          "date": "September 2008 - 2009 June.",
+          "title": "Graduated Higher School",
+          "icon": null,
+          "subtitle": "Bachelor's degree in Sciences",
+          "location": "CHEFCHAOUNI HIGH SCHOOL - Temara, Morocco"
+        }
+      ],
+      "experience": [
+        {
+          "order": -5,
+          "date": "July 2020 - Present",
+          "title": "Deloitte Nearshore",
+          "icon": "<img src=\"https:\/\/image.pngaaa.com\/356\/4173356-middle.png\" alt=\"place img\" style=\" width: 28px; \">",
+          "subtitle": "Full Stack Software Engineer",
+          "description" : "As a consultant, I worked across a wide variety of applications, and projects within Deloitte." ,
+          "stack" : ["Laravel","Vuejs","Azure","Docker","JAVASCRIPT"],
+          "location": "Casablanca, Morocco"
+        },
+        {
+          "order": -4,
+          "date": "July 2019 - Present",
+          "title": "Deloitte Nearshore",
+          "icon": "<img src=\"https:\/\/image.pngaaa.com\/356\/4173356-middle.png\" alt=\"place img\" style=\" width: 28px; \">",
+          "subtitle": "Sharepoint developer - Site admin",
+          "description" : "" ,
+          "stack" : ["VueJS","AngularJS","Sharepoint,","Powershell"],
+          "location": "Casablanca, Morocco"
+        },
+        {
+          "order": -3,
+          "date": "October 2018 - January 2019",
+          "title": "YAFCOM",
+          "icon": null,
+          "subtitle": "Internship - PHP Developer",
+          "description" : "" ,
+          "stack" : ["Laravel,","php,","vue","git"],
+          "location": "Rabat, Morocco"
+        },
+        {
+          "order": -2,
+          "date": "Novembre 2015 – Mai 2018",
+          "title": "MICROSOFT - Téléperformance",
+          "icon": null,
+          "subtitle": "Tech support tier 2/3",
+          "description" : "" ,
+          "stack" : ["Powershell Scripting,","Shell Scripting","PHP","ANGULQR"],
+          "location": "Rabat, Morocco"
+        },
+        {
+          "order": -1,
+          "date": "April 2015 - January 2016",
+          "title": "Self-employed - Freelance",
+          "icon": null,
+          "subtitle": "Full Stack Developer",
+          "description" : "",
+          "stack" : ["JAVASCRIPT","Jquery","CSS/Sass","Bootstrap","Php","Git"],
+          "location": "Temara, Morocco"
+        },
+        {
+          "order": 0,
+          "date": "June 2014 - November 2014",
+          "title": "Ministry of Housing and Local Government",
+          "icon": null,
+          "subtitle": "Internship - Java Developer",
+          "description" : "" ,
+          "stack" : ["","","",""],
+          "location": "Rabat, Morocco"
+        },
+        {
+          "order": 2,
+          "date": "July 2013 - September 2013",
+          "title": "NoLIMIT",
+          "icon": null,
+          "subtitle": "Internship - Web developer",
+          "description" : "" ,
+          "stack" : ["Wordpress","Magento","Php","CSS","Jquery"],
+          "location": "Rabat, Morocco"
+        }
+      ]
+    },
+    "Github": {
+      
+    }
+  }
+}
