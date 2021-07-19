@@ -4,8 +4,8 @@
       <div class="row">
         <div class="col-md-12">
            <div class="title-section text-center">
-            <span class="h2 eff-1 g-title">Github Project & Other</span>
-            <p>Achievements, projects & contribution.</p>
+            <span class="h2 eff-1 g-title glitch-text text-primary-color">Github Project & Other</span>
+            <p class="text-secondary-color">Achievements, projects & contribution.</p>
           </div>
         </div>
       </div>
@@ -40,7 +40,7 @@
                     <a :href="repo.html_url" target="_blank">{{ repo.name }}</a>
                   </h4>
                   <p class="repo-date">{{ repo.updated_at }}</p>
-                  <p>{{repo.description}}</p>
+                  <p class="text-secondary-color">{{repo.description}}</p>
                   <!-- <read-more
                     more-str="Read more"
                     :text="repo.description"

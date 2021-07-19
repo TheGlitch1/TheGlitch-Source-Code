@@ -5,7 +5,7 @@
       "image_alt": "First Last Name Profile",
       "signature": "settings\/December2019\/K9XU1etUzB4nzrJz0vAm.png",
       "title": "About me",
-      "text": "<p>I'm a (mostly) self taught Software Engineer. Skilled in PHP, JS, Python, C++ and most Frontend Technologies. I'm actively looking for remote opportunities, if interested, contact me.<\/p>",
+      "text": "<p>I'm a Fullstack Engineer. Implemented enterprise web applications and CMS based solutions using frameworks like Laravel and Vue.</p><p> Dedicated to perfecting my craft by learning from more seasoned developers, remaining humble, and continously making strides to learn all that I can about development. I'm actively looking for remote opportunities, if interested, contact me.<\/p>",
       "button_1": {
         "text": "Hire Me",
         "link": "#contact"
@@ -110,6 +110,14 @@
     ],
     "resume": {
       "education": [
+        {
+          "order": -1,
+          "date": "July 2018 - 2018 August.",
+          "title": "General Programation bootcamp",
+          "icon": null,
+          "subtitle": "Driven by curiosity, I challenged myself to leave everything behind and dive into a digital pool. Like a game, the goal was to gather XP from days, projects and exams to level-up as much as possible. And it worked :)",
+          "location": "13 37 Pool ( 42 )- Khouribga, Morocco"
+        },
         {
           "order": 0,
           "date": "September 2009 - 2014 Novemebre.",

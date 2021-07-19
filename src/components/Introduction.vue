@@ -6,10 +6,10 @@
         <div class="col-12 col-md-7">
           <div class="slider-contents">
             <div class="slider-text">
-              <span class="greeting eff-1">
+              <span class="greeting eff-1 text-primary-color">
                 H e l l o
               </span>
-              <h1 class="text-3r">
+              <h1 class="text-3r text-secondary-color">
                 I'm
                 <span class="name glitch-text">
                   <span class="name glitch-text glitch-span" aria-hidden="true">Undefined</span>
@@ -18,7 +18,7 @@
                 </span>
                 entity
               </h1>
-              <p class="desc1">
+              <p class="desc1 text-secondary-color">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
                 sed autem ipsam vel, fugiat ex eaque vitae, magnam itaque quas tenetur?
                 Delectus ducimus officia aspernatur eligendi corrupti, nobis voluptate
@@ -44,7 +44,7 @@
         </div>
         <div class="into-1">
           <div class="social">
-            <ul class="list-social inline-active">
+            <ul class="list-social inline-active text-secondary-color">
               <!-- <li>F</li> -->
               <li>
                 <a href="https://github.com/TheGlitch1">Github</a>

@@ -13,9 +13,9 @@
                 </div>
                 <div class="col-12 col-md-7">
                     <div class="about-right">
-                        <span class="h2 eff-1 g-title">{{ profile.title }}</span>
+                        <span class="h2 eff-1 g-title glitch-text text-primary-color">{{ profile.title }}</span>
                         <hr>
-                        <p v-html="profile.text" />
+                        <p class="text-secondary-color" v-html="profile.text" />
                     </div>
                     <div class="about-meta">
                         <div class="about-meta-links">
@@ -97,11 +97,11 @@ export default ({
 }
 
 .about-right {
-    padding-top: 8vh;
+    padding-top: 3vh;
 }
 
 .about-meta{
-    margin-top: 35px;
+    margin-top: 50px;
 }
 
 .slider-media-hoz{

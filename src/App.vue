@@ -158,6 +158,12 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+:root{
+  --text-primary-color: #efefef;
+  --text-secondary-color: #4e7ba6;
+  --text-third-color: #838689;
+  --on-primary-color: white;
+}
 #app {
   overflow-x: hidden;
   /* font-family: Avenir, Helvetica, Arial, sans-serif; */
@@ -168,6 +174,15 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
   margin: 0;
+}
+.text-primary-color{
+  color:var(--text-primary-color)
+}
+.text-secondary-color{
+  color:var(--text-secondary-color)
+}
+.text-third-color{
+  color:var(--text-third-color)
 }
 .relative {
   position: relative;

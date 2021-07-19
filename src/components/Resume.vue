@@ -4,8 +4,8 @@
       <div class="row">
         <div class="col-md-12 ">
           <div class="title-section text-center">
-            <span class="h2 eff-1 g-title">Resume</span>
-            <p>Education, work experiences and projects.</p>
+            <span class="h2 eff-1 g-title glitch-text text-primary-color">Resume</span>
+            <p class="text-secondary-color">Education, work experiences and projects.</p>
           </div>
         </div>
 
@@ -13,7 +13,7 @@
       <div class="row no-margin">
         <div class="col-md-6 no-padding">
           <div class="content-left">
-            <h2 class="text-3r resume-heading">
+            <h2 class="text-3r resume-heading text-primary-color">
               <i class="ti-crown" />
               Education
             </h2>
@@ -29,7 +29,9 @@
             <span class="content-date">{{education.date}}</span>
             <h3 v-if="education.icon" :html="`${education.icon} ${education.title}`" />
             <h3 v-else v-html="education.title" />
-            <p class="content-main-description" v-html="education.subtitle" />
+            <!-- <p class="content-main-description" v-html="education.subtitle" /> -->
+            <ReadMore :content="education.subtitle" :showMin=true :min=40 />
+
             <a href="#">
               <h4>{{ education.location }}</h4>
             </a>
@@ -38,7 +40,7 @@
 
           <div class="col-md-6 no-padding">
             <div class="content-left">
-                <h2 class="text-3r resume-heading">
+                <h2 class="text-3r resume-heading text-primary-color">
                   <i class="ti-crown" />
                     Experience
                 </h2>
@@ -60,11 +62,10 @@
                       </span>
                       <span v-if="experience.description" @click="showMore(key)"> + details</span> -->
               <!-- Replacement with a separated component -->
-              <ReadMore v-if="experience.description" :content="experience.description"  />
+              <ReadMore v-if="experience.description" :content="experience.description" :showMin=false />
               <a href="#">
                 <h4>{{ experience.location }}</h4>
               </a>
-            
             
           </div> <!-- End experience loop -->
         </div>
@@ -181,6 +182,9 @@ span.content-date {
     background: #060606;
     /* border-bottom: 0.2px solid #efeefe; */
     transition: all .3s ease-in-out;
+}
+.content-main.content-main-left:hover {
+    background: #1a191c29;
 }
 @media (min-width: 1200px){
 
