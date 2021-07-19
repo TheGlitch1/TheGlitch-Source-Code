@@ -2,7 +2,7 @@
     <section id="about" class="about section-padding">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-md-5 ">
+                <div class="col-12 col-md-5 d-none d-md-block">
                   <div class="slider-contents-baner">
                    <div class="slider-media-hoz">
                        <span class="faded faded-right faded-top faded-style-2">

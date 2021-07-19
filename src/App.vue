@@ -51,6 +51,9 @@ export default {
       data:json.data
     }
   },
+  created(){
+    document.title = "\_The Glitch"
+  },
   mounted() {
     // this.dataAll = json.data;
     console.log('profile == ' , this.profile);
@@ -160,10 +163,12 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
 :root{
   --text-primary-color: #efefef;
-  --text-secondary-color: #4e7ba6;
+  /* --text-secondary-color: #4e7ba6; */
+  --text-secondary-color: #b1c1d1;
   --text-third-color: #838689;
   --on-primary-color: white;
 }
+
 #app {
   overflow-x: hidden;
   /* font-family: Avenir, Helvetica, Arial, sans-serif; */

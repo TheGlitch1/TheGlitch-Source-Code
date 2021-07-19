@@ -33,7 +33,7 @@
 
         </div>
 
-        <div class="col-12 col-md-5">
+        <div class="col-12 col-md-5 d-none d-md-block">
           <div class="slider-contents-baner relative">
             <div class="slider-media-hoz">
               <span class="faded faded-left faded-bottom faded-style-2">
