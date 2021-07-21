@@ -19,10 +19,7 @@
                 entity
               </h1>
               <p class="desc1 text-secondary-color">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit
-                sed autem ipsam vel, fugiat ex eaque vitae, magnam itaque quas tenetur?
-                Delectus ducimus officia aspernatur eligendi corrupti, nobis voluptate
-                officiis!
+                I'm a Fullstack Engineer. Implemented enterprise web applications and CMS based solutions using frameworks like Laravel and Vue.
               </p>
             </div>
             <div class="download-section">
