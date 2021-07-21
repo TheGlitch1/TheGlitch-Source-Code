@@ -1,12 +1,12 @@
 <template>
   <div class="row read-more">
-      <div class="col-md-12 pt-0 mt-0" v-if="load || showMin">
-        <ul class="content-desc">
-        <li class="description" >{{detailedDescription}}</li>
-        </ul>
+      <div class="col-md-12 pt-0 mt-0" v-show="load || showMin">
+        <ul v-if="bulletStyle" class="content-desc" v-html="`${detailedDescription}`" />
+        <p v-else class="description">{{detailedDescription}}</p>
+
       </div>
       <div class="button-read-me offset-md-6 col-md-6 text-right" v-if="minIs">
-          <p class="text-right" :class="[load ? 'text-secondary-color' : 'text-primary-color']" @click="showMore()"> {{stateReading}} details</p>
+          <p class="readEvent text-right" :class="[load ? 'text-secondary-color' : 'text-primary-color']" @click="showMore()"> {{stateReading}} details</p>
       </div>
   </div>
   
@@ -22,14 +22,17 @@ export default {
     },
     showMin:{
       type:Boolean,
-      default: () => {
-        return {}
-       }
+      default: false
+       
     },
     min:{
       type:Number,
-      default: false
+      default: ''
     },
+    bulletStyle:{
+      type:Boolean,
+      default: false
+    }
   },
     data(){
       return{
@@ -70,6 +73,13 @@ export default {
 
 .read-more p {
   /* color: #999; */
+  color: white;
+  
+}
+
+.read-more .readEvent {
+  /* color: #999; */
+  color: white;
   font-size: 14px;
 }
 </style>

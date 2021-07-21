@@ -62,7 +62,7 @@
                       </span>
                       <span v-if="experience.description" @click="showMore(key)"> + details</span> -->
               <!-- Replacement with a separated component -->
-              <ReadMore v-if="experience.description" :content="experience.description" :showMin=false />
+              <ReadMore v-if="experience.description" :content="experience.description" :showMin=false :bulletStyle=true />
               <a href="#">
                 <h4>{{ experience.location }}</h4>
               </a>

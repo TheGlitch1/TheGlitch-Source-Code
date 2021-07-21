@@ -40,7 +40,9 @@
                     <a :href="repo.html_url" target="_blank">{{ repo.name }}</a>
                   </h4>
                   <p class="repo-date">{{ repo.updated_at }}</p>
-                  <p class="text-secondary-color">{{repo.description}}</p>
+                  <!-- <p class="text-secondary-color">{{repo.description}}</p> -->
+                  <ReadMore class="text-secondary-color" :content="repo.description" :showMin=true :min=40 />
+
                   <!-- <read-more
                     more-str="Read more"
                     :text="repo.description"
@@ -83,7 +85,12 @@
 </template>
 
 <script>
+import ReadMore from './ReadMore.vue';
+
   export default {
+    components:{
+    ReadMore
+    },
     props: {
        projects: {
           type: Object,

@@ -26,7 +26,7 @@
               </p>
             </div>
             <div class="download-section">
-               <a href="" class="btn-custom btn-glitchy line-link"><span class="text-inner ">Download</span></a>
+               <a href="https://drive.google.com/file/d/1BIB3C28zp34j2GsFpqI7NLsQnnf-KfqJ/view?usp=sharing" target="blank" class="btn-custom btn-glitchy line-link"><span class="text-inner ">Download</span></a>
             </div>
         </div>
 

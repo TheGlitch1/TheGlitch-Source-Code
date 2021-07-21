@@ -12,7 +12,7 @@
       },
       "button_2": {
         "text": "Resume",
-        "link": "https:\/\/Theglitch1.co\/storage\/CV%20Name%20NAme%20ENG.pdf"
+        "link": "https:\/\/drive.google.com\/file\/d\/1BIB3C28zp34j2GsFpqI7NLsQnnf-KfqJ\/view?usp=sharing"
       }
     },
     "social": [
@@ -24,7 +24,7 @@
       {
         "text": "Linkedin",
         "icon": "ti-linkedin",
-        "link": "https:\/\/www.linkedin.com\/in\/YassineNatij\/"
+        "link": "https:\/\/www.linkedin.com\/in\/Yassine-Natij\/"
       },
       {
         "text": "Instagram",
@@ -142,7 +142,7 @@
           "title": "Deloitte Nearshore",
           "icon": "<img src=\"https:\/\/image.pngaaa.com\/356\/4173356-middle.png\" alt=\"place img\" style=\" width: 28px; \">",
           "subtitle": "Full Stack Software Engineer",
-          "description" : "As a consultant, I worked across a wide variety of applications, and projects within Deloitte." ,
+          "description" : "<li style=\"color: white;\"> As a consultant, I worked across a wide variety of applications, and projects within Deloitte.<\/li>" ,
           "stack" : ["Laravel","Vuejs","Azure","Docker","JAVASCRIPT"],
           "location": "Casablanca, Morocco"
         },
