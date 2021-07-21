@@ -26,8 +26,7 @@
               </p>
             </div>
             <div class="download-section">
-            <a href="" class="btn-custom btn-glitchy line-link"><span class="text-inner ">Download</span></a>
-
+               <a href="" class="btn-custom btn-glitchy line-link"><span class="text-inner ">Download</span></a>
             </div>
         </div>
 
@@ -54,11 +53,9 @@
               </li>
             </ul>
           </div>
-      </div>
+        </div>
 
       </div>
-      
-
     </div>
 
   </section>

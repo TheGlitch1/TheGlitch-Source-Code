@@ -8,7 +8,7 @@
     <AboutComponent :skills="data.skills"
       :profile="profile.about"/>
 
-    <GithubProjectsComponent />
+    <GithubProjectsComponent :projects="data.projects"/>
     <ResumeComponent :resume="data.resume" />
 
     <!-- <ContactComponent :settings="settings" />
@@ -18,7 +18,7 @@
     <section id="aboutMe"></section>
     <section id="Projects"></section>
     <section id="Resume"></section> -->
-    <section id="Exp"></section>
+    <!-- <section id="Exp"></section> -->
   </div>
 </template>
 

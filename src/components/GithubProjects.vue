@@ -85,7 +85,12 @@
 <script>
   export default {
     props: {
-
+       projects: {
+          type: Object,
+          default: () => {
+            return {}
+          }
+        }
     },
     data(){
       return{
@@ -142,7 +147,8 @@
                 watchers: s.watchers_count,
                 url: s.url = s.html_url,
                 forks: s.forks_count,
-                updated_at: s.updated_at
+                updated_at: s.updated_at,
+                type: "G"
               }));
               this.loadingRepos = true;
             })
@@ -151,11 +157,12 @@
             });
             // this.repos.sort((a, b) => (a.stargazers < b.stargazers ? 1 : -1))
             // this.repos.sort((a, b) => (a.watchers < b.watchers ? 1 : -1))
+           
+             this.repos = [...this.repos,...this.projects.entreprise]
              this.repos.sort(function(a,b){
                   return new Date(b.updated_at) - new Date(a.updated_at);
              });
             this.setStackElements()
-            console.log(this.repos[2]);
       },
       setLanguageFilter(text) {
         this.filter = text

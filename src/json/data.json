@@ -208,8 +208,37 @@
         }
       ]
     },
-    "Github": {
-      
+    "projects": {
+      "entreprise" : [
+        {
+          "owner": "TheGlitch1",
+          "name": "My Cyber******",
+          "repo": "My Cyber******",
+          "description": "A training platform built entirely around gamification, focusing on learner motivation, with a point and progress tracking system that encourages growth. The platform core features helps listing top skilled profiles and easily find potential collaborators for specific projects.",
+          "language": "Laravel",
+          "isFork":false ,
+          "stargazers": 0,
+          "watchers": 0,
+          "url": "#",
+          "forks": 0,
+          "updated_at": "2020-12-12T17:53:20Z",
+          "type": "Corp"
+       },
+       {
+          "owner": "TheGlitch1",
+          "name": "Smart Res******",
+          "repo": "Smart Res******",
+          "description": "Saas management platform, offering companies the tools needed to manage stakeholders, maintain compliance, and simplify operations",
+          "language": "Laravel",
+          "isFork":false ,
+          "stargazers": 0,
+          "watchers": 0,
+          "url": "#",
+          "forks": 0,
+          "updated_at": "2020-12-12T17:53:20Z",
+          "type": "Corp"
+       }
+      ]
     }
   }
 }
