@@ -1,10 +1,11 @@
 <template>
-  <section id="Projects">
+  <section id="Projects" class="projects-area section-padding section">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
            <div class="title-section text-center">
-            <span class="h2 eff-1 g-title glitch-text text-primary-color">Github Project & Other</span>
+            <span class="h2  g-title glitch-text text-primary-color">Github Project & Other</span>
+            <hr>
             <p class="text-secondary-color">Achievements, projects & contribution.</p>
           </div>
         </div>
@@ -164,9 +165,10 @@ import ReadMore from './ReadMore.vue';
             });
             // this.repos.sort((a, b) => (a.stargazers < b.stargazers ? 1 : -1))
             // this.repos.sort((a, b) => (a.watchers < b.watchers ? 1 : -1))
-           
-             this.repos = [...this.repos,...this.projects.entreprise]
-             this.repos.sort(function(a,b){
+            console.log(this.repos)
+            this.repos = this.repos.filter(repo => !repo.full_name.match("TheGlitch1.github.io"))
+            this.repos = [...this.repos,...this.projects]
+            this.repos.sort(function(a,b){
                   return new Date(b.updated_at) - new Date(a.updated_at);
              });
             this.setStackElements()
@@ -188,6 +190,10 @@ import ReadMore from './ReadMore.vue';
 </script>
 
 <style scoped>
+.projects-area.section-padding {
+    padding-top: 120px;
+    padding-bottom: 100px;
+}
 .list-stack-titles{
     margin: 0 0 40px;
     padding: 0;
@@ -218,9 +224,11 @@ li.active,li:hover {
 .github-item {
   padding: 2.5rem;
   margin-left: 1rem;
-  background: #121213;
+  /* background: #121213; */
+  background: #09090a;
   transition: all 0.3s ease-in-out;
   min-height: 300px;
+  min-width: 370px;
 }
 
 .service-teatimonial-item-inner {
@@ -248,4 +256,13 @@ li.active,li:hover {
   .service-stack{
     color: #eee !important;
   }
+
+  @media (max-width: 767px) and (min-width: 320px){
+
+    .projects-area.section-padding {
+    padding-top: 80px;
+    padding-bottom: 60px;
+    } 
+  }
+
 </style>

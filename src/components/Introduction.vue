@@ -6,7 +6,7 @@
         <div class="col-12 col-md-7">
           <div class="slider-contents">
             <div class="slider-text">
-              <span class="greeting eff-1 text-primary-color">
+              <span class="greeting  text-primary-color">
                 H e l l o
               </span>
               <h1 class="text-3r text-secondary-color">
@@ -135,5 +135,15 @@ export default {
 
 .list-social li:hover {
   color: #eee;
+}
+@media (max-width: 767px) and (min-width: 320px){
+  .slider-text {
+      padding-top: 90px;
+      margin-bottom: 50px;
+  }
+  .Intro-Section {
+    min-height: unset;
+    /* overflow: hidden; */
+  } 
 }
 </style>

@@ -8,7 +8,7 @@
     <AboutComponent :skills="data.skills"
       :profile="profile.about"/>
 
-    <GithubProjectsComponent :projects="data.projects"/>
+    <GithubProjectsComponent :projects="data.projects.entreprise"/>
     <ResumeComponent :resume="data.resume" />
 
     <!-- <ContactComponent :settings="settings" />
@@ -466,7 +466,7 @@ canvas {
 
 .g-title{
     position: relative;
-    /* font-size: 13px; */
+    font-size: 2.2rem;
     /* font-weight: 500; */
     text-transform: uppercase;
     padding-left: 30px;

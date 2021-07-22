@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col-md-12 ">
           <div class="title-section text-center">
-            <span class="h2 eff-1 g-title glitch-text text-primary-color">Resume</span>
+            <span class="h2  g-title glitch-text text-primary-color">Resume</span>
             <p class="text-secondary-color">Education, work experiences and projects.</p>
           </div>
         </div>

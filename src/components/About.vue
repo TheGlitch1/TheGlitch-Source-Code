@@ -13,7 +13,7 @@
                 </div>
                 <div class="col-12 col-md-7">
                     <div class="about-right">
-                        <span class="h2 eff-1 g-title glitch-text text-primary-color">{{ profile.title }}</span>
+                        <span class="h2  g-title glitch-text text-primary-color">{{ profile.title }}</span>
                         <hr>
                         <p class="text-secondary-color" v-html="profile.text" />
                     </div>
@@ -107,4 +107,11 @@ export default ({
 .slider-media-hoz{
 
 }
+
+  @media (max-width: 767px) and (min-width: 320px){
+
+    .about.section-padding {
+      padding: 125px 0 110px;
+    }
+  }
 </style>

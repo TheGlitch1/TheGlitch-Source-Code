@@ -142,7 +142,7 @@
           "title": "Deloitte Nearshore",
           "icon": "<img src=\"https:\/\/image.pngaaa.com\/356\/4173356-middle.png\" alt=\"place img\" style=\" width: 28px; \">",
           "subtitle": "Full Stack Software Engineer",
-          "description" : "<li style=\"color: white;\"> As a consultant, I worked across a wide variety of applications, and projects within Deloitte.<\/li>" ,
+          "description" : "<li style=\"color: white;\"> As a consultant, I worked across a wide variety of applications, and projects within Deloitte.<\/li><li style=\"color: white;\">Performed key role in cross-functional management and clients through planning phases of projects. development, testing, and product launch.<\/li><li style=\"color: white;\"> Created various applications using vueJs integrated as webpart in the intranet.<\/li>" ,
           "stack" : ["Laravel","Vuejs","Azure","Docker","JAVASCRIPT"],
           "location": "Casablanca, Morocco"
         },
