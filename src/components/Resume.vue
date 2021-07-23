@@ -31,7 +31,6 @@
             <h3 v-else v-html="education.title" />
             <!-- <p class="content-main-description" v-html="education.subtitle" /> -->
             <ReadMore :content="education.subtitle" :showMin=true :min=40 />
-
             <a href="#">
               <h4>{{ education.location }}</h4>
             </a>
@@ -48,25 +47,19 @@
           <div
             v-for="(experience, key) in experiences"
             :key="key"
-            class="content-main content-main-left"
-            :class="{ 'mb-30': isLastIn(key, 'experience') }">
-
+            class="content-main content-main-left" :class="{ 'mb-30': isLastIn(key, 'experience') }">
               <!-- List all expriences -->
               <span class="content-date">{{experience.date}}</span>
               <h3 v-if="experience.icon" v-html="`${experience.icon} ${experience.title}`" />
               <h3 v-else v-html="experience.title" />
               <p v-html="experience.subtitle" />
-              <!-- TODO: Replace with a component -->
-                      <!-- <span class="content-desc" v-show="details[key]==true">
-                        {{experience.description}}
-                      </span>
-                      <span v-if="experience.description" @click="showMore(key)"> + details</span> -->
-              <!-- Replacement with a separated component -->
               <ReadMore v-if="experience.description" :content="experience.description" :showMin=false :bulletStyle=true />
+               <span class="stack" v-for="( stack , key ) in experience.stack" :key="key">
+                 {{stack}} {{ key+1 == experience.stack.length  ? "" : "-" }}
+               </span>
               <a href="#">
                 <h4>{{ experience.location }}</h4>
-              </a>
-            
+              </a>           
           </div> <!-- End experience loop -->
         </div>
       </div>
@@ -140,7 +133,11 @@ span.content-date {
     font-weight: 600;
     font-family: Roboto Mono;
 }
-
+span.stack {
+    color: var(--text-primary-color);
+    font-size: 12px;
+    font-weight: 600;
+}
 .content-main h3 {
     color: #7943eb;
     font-size: 20px;

@@ -3,7 +3,6 @@
       <div class="col-md-12 pt-0 mt-0" v-show="load || showMin">
         <ul v-if="bulletStyle" class="content-desc" v-html="`${detailedDescription}`" />
         <p v-else class="description">{{detailedDescription}}</p>
-
       </div>
       <div class="button-read-me offset-md-6 col-md-6 text-right" v-if="minIs">
           <p class="readEvent text-right" :class="[load ? 'text-secondary-color' : 'text-primary-color']" @click="showMore()"> {{stateReading}} details</p>

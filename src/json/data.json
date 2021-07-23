@@ -142,7 +142,7 @@
           "title": "Deloitte Nearshore",
           "icon": "<img src=\"https:\/\/image.pngaaa.com\/356\/4173356-middle.png\" alt=\"place img\" style=\" width: 28px; \">",
           "subtitle": "Full Stack Software Engineer",
-          "description" : "<li style=\"color: white;\"> As a consultant, I worked across a wide variety of applications, and projects within Deloitte.<\/li><li style=\"color: white;\">Performed key role in cross-functional management and clients through planning phases of projects. development, testing, and product launch.<\/li><li style=\"color: white;\"> Created various applications using vueJs integrated as webpart in the intranet.<\/li>" ,
+          "description" : "<li style=\"color: white;\"> As a consultant, I worked across a wide variety of applications, and projects within Deloitte.<\/li><li style=\"color: white;\">Performed key role in cross-functional management and clients through planning phases of projects. development, testing, and product launch.<\/li><li style=\"color: white;\"> Frontend and backend development of web applications.<\/li>" ,
           "stack" : ["Laravel","Vuejs","Azure","Docker","JAVASCRIPT"],
           "location": "Casablanca, Morocco"
         },
@@ -152,7 +152,7 @@
           "title": "Deloitte Nearshore",
           "icon": "<img src=\"https:\/\/image.pngaaa.com\/356\/4173356-middle.png\" alt=\"place img\" style=\" width: 28px; \">",
           "subtitle": "Sharepoint developer - Site admin",
-          "description" : "" ,
+          "description" : "<li style=\"color: white;\"> Created various applications using vueJs integrated as webpart in the intranet.<\/li><li style=\"color: white;\">Participation in migrations from SP 2010 to SP 2016-Online.<\/li>" ,
           "stack" : ["VueJS","AngularJS","Sharepoint,","Powershell"],
           "location": "Casablanca, Morocco"
         },
@@ -162,7 +162,7 @@
           "title": "YAFCOM",
           "icon": null,
           "subtitle": "Internship - PHP Developer",
-          "description" : "" ,
+          "description" : "<li style=\"color: white;\">Development and implementation of internal CRM for processing orders and quotes for potential customers.<\/li>" ,
           "stack" : ["Laravel,","php,","vue","git"],
           "location": "Rabat, Morocco"
         },
@@ -172,7 +172,7 @@
           "title": "MICROSOFT - Téléperformance",
           "icon": null,
           "subtitle": "Tech support tier 2/3",
-          "description" : "" ,
+          "description" : "<li style=\"color: white;\">Track and report Bugs on VDI.VMAS of newer versions of Windows 10.<\/li><li style=\"color: white;\">Providing Documents and detailed solutions for technical support level 1 and 2.<\/li>" ,
           "stack" : ["Powershell Scripting,","Shell Scripting","PHP","ANGULQR"],
           "location": "Rabat, Morocco"
         },
@@ -182,7 +182,7 @@
           "title": "Self-employed - Freelance",
           "icon": null,
           "subtitle": "Full Stack Developer",
-          "description" : "",
+          "description" : "<li style=\"color: white;\">Coordinated and communicate with customers to plan web development projects from concept through completion, utilizing a variety of web development tools and technology.<\/li>",
           "stack" : ["JAVASCRIPT","Jquery","CSS/Sass","Bootstrap","Php","Git"],
           "location": "Temara, Morocco"
         },
@@ -192,8 +192,8 @@
           "title": "Ministry of Housing and Local Government",
           "icon": null,
           "subtitle": "Internship - Java Developer",
-          "description" : "" ,
-          "stack" : ["","","",""],
+          "description" : "<li style=\"color: white;\">Analysis and Development of a JAVA rank and evolution advancement solution for the human resource department.<\/li>" ,
+          "stack" : ["WAVEMAKER","JAVA","Spring","Hibernate"],
           "location": "Rabat, Morocco"
         },
         {
@@ -202,7 +202,7 @@
           "title": "NoLIMIT",
           "icon": null,
           "subtitle": "Internship - Web developer",
-          "description" : "" ,
+          "description" : "<li style=\"color: white;\">Participation in a project for identification by QR code.<\/li>" ,
           "stack" : ["Wordpress","Magento","Php","CSS","Jquery"],
           "location": "Rabat, Morocco"
         }
