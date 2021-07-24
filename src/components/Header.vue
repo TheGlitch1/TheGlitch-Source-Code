@@ -30,8 +30,8 @@
             <li class="header-nav">
               <a href="#resume">Resume</a>
             </li>
-            <li class="header-nav">
-              <a href="#contact">Contact</a>
+            <li class="header-nav" >
+              <a href="#contact" @click="openForm">Contact</a>
             </li>
           </ul>
         </div>
@@ -78,6 +78,7 @@ import 'slicknav/dist/slicknav.min.css'
 
 export default {
   name: 'HeaderComponent',
+  props :['showform'],
   data() {
     return {
     //   logo: 'assets/img/logo/logo.svg',
@@ -100,7 +101,10 @@ export default {
     },
     setLang(lang) {
     //   this.$i18n.locale = lang
-    }
+    },
+    openForm: function() {
+			this.$emit('openForm', true)
+		}
   }
 }
 </script>

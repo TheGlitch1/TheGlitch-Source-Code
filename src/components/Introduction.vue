@@ -12,11 +12,11 @@
               <h1 class="text-3r text-secondary-color">
                 I'm
                 <span class="name glitch-text">
-                  <span class="name glitch-text glitch-span" aria-hidden="true">Undefined</span>
-                  <span class="name glitch-text glitch-span" aria-hidden="true">Undefined</span>
-                  Undefined
+                  <span class="name glitch-text glitch-span" aria-hidden="true">YASSINE</span>
+                  <span class="name glitch-text glitch-span" aria-hidden="true">YASSINE</span>
+                  YASSINE
                 </span>
-                entity
+                Natij
               </h1>
               <p class="desc1 text-secondary-color">
                 I'm a Fullstack Engineer. Implemented enterprise web applications and CMS based solutions using frameworks like Laravel and Vue.

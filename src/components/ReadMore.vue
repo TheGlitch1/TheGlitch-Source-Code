@@ -26,7 +26,7 @@ export default {
     },
     min:{
       type:Number,
-      default: ''
+      default: 0
     },
     bulletStyle:{
       type:Boolean,

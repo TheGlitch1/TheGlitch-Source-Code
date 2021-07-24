@@ -3,7 +3,7 @@
     <canvas></canvas>
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
-    <HeaderComponent />
+    <HeaderComponent :showform="openContact" @openForm="updateOpenContact($event)" />
     <IntroductionComponent  :profile = "profile" />
     <AboutComponent :skills="data.skills"
       :profile="profile.about"/>
@@ -11,8 +11,9 @@
     <GithubProjectsComponent :projects="data.projects.entreprise"/>
     <ResumeComponent :resume="data.resume" />
 
-    <!-- <ContactComponent :settings="settings" />
-    <FooterComponent /> -->
+    <!-- <ContactComponent :settings="settings" :showform="openContact" /> -->
+    <ContactComponent :showform="openContact" @openForm="updateOpenContact($event)" />
+    <!-- <FooterComponent /> -->
 
     <!-- <section id="introduction"></section>
     <section id="aboutMe"></section>
@@ -37,7 +38,6 @@ export default {
   name: "App",
   components: {
     HeaderComponent,
-    // HelloWorld,
     IntroductionComponent,
     AboutComponent,
     ResumeComponent,
@@ -48,7 +48,8 @@ export default {
   data(){
     return{
       profile:json.settings,
-      data:json.data
+      data:json.data,
+      openContact :false
     }
   },
   created(){
@@ -155,6 +156,9 @@ export default {
     parseMedata() {
       
     },
+    updateOpenContact(value){
+      this.openContact = value
+    }
   },
 };
 </script>

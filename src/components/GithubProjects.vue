@@ -94,7 +94,7 @@ import ReadMore from './ReadMore.vue';
     },
     props: {
        projects: {
-          type: Object,
+          type: Array,
           default: () => {
             return {}
           }
