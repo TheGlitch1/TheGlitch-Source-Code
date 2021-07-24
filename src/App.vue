@@ -167,8 +167,8 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
 :root{
   --text-primary-color: #efefef;
-  /* --text-secondary-color: #4e7ba6; */
   --text-secondary-color: #b1c1d1;
+  --special-color: rgb(90 46 187);
   --text-third-color: #838689;
   --on-primary-color: white;
 }
@@ -193,6 +193,12 @@ export default {
 .text-third-color{
   color:var(--text-third-color)
 }
+.text-special-color{
+  color:var(--special-color);
+}
+.bg-special-color{
+  background:var(--special-color);
+}
 .relative {
   position: relative;
 }
@@ -200,7 +206,9 @@ export default {
 .float-right{
   float: right;
 }
-
+.font-weight-bold{
+  font-weight: 700;
+}
 a {
     color: inherit!important;
     text-decoration: inherit!important;
@@ -330,6 +338,56 @@ canvas {
     transform: translate(-2px, 2px);
   }
 }
+
+
+.animate-pulse-left{
+  animation: leftpulse 0.9s ease-in-out infinite alternate ;
+  animation-delay: 3s;
+
+}
+.animate-pulse-right{
+  animation: rightpulse 3s ease-in-out infinite alternate ;
+  /* animation-delay: 3s; */
+
+}
+@-webkit-keyframes leftpulse {
+  0% { transform: translate(-2px, 2px); opacity: 0.4 }
+
+  75% { transform: translate(-4px, 2px); opacity: 0.4 }
+
+  99% { transform: translate(0px, -4px); opacity: 0.9 }
+
+  100% { transform: translate(-10px, 2px); opacity: 0.9 }
+}
+
+@keyframes leftpulse {
+  /* 0% { transform: translateX(0); opacity: 0.4 }
+  98% { transform: translate(2px, 2px); opacity: 0.9 }
+  100% { transform: translateX(-0.4em); opacity: 0.9 } */
+  0% { transform: translate(-2px, 0px); opacity: 0.4 }
+
+  75% { transform: translate(-4px, 2px); opacity: 0.4 }
+
+  99% { transform: translate(0px, -4px); opacity: 0.6 }
+
+  100% { transform: translate(-10px, 2px); opacity: 0.9 }
+}
+
+@-webkit-keyframes rightpulse {
+  0% { transform: translateX(0); opacity: 0.4 }
+  30% { transform: translateX(0.4em); opacity: 0.9 }
+  50% { transform: translateX(0.4em); opacity: 0.9 }
+  100% { transform: translateX(0.4em); opacity: 0.9 }
+
+}
+@keyframes rightpulse {
+  0% { transform: translateX(0); opacity: 0.4 }
+  /* 20% { transform: translateX(0.1em); opacity: 0.7 } */
+  30% { transform: translateX(0.4em); opacity: 0.9 }
+  50% { transform: translateX(0.4em); opacity: 0.9 }
+  100% { transform: translateX(0.4em); opacity: 0.9 }
+}
+
 .name {
   font-size: 5rem;
 }

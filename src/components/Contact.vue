@@ -6,15 +6,15 @@
   >
     <div class="container">
       <div class="row">
-        <div class="col-1" @click="updateState">
-          <span class="icon " :class="[ showform ? '': 'p-2' ]">
+        <div class="col-1 animate-pulse-right" @click="updateState">
+          <span class="icon h4 " :class="[ showform ? 'text-special-color font-weight-bold': '' ]">
             {{ showform ? ">>" : "<<" }}
           </span>
         </div>
         <div class="col-12 text-center" :class="{ 'd-none': !showform }">
           <div class="contact-from-error" v-if="!status.sent">
             <h4 class="mb-4">{{status.message}}</h4>
-            <p>Contact me directly : <span class="g-title">natij.yas@gmail.com</span></p>
+            <p>Please contact me directly : <span class="g-title">natij.yas@gmail.com</span></p>
           </div>
           <div v-else class="contact-form" :class="{ 'contact-form-active': !showform }">
 
@@ -55,6 +55,10 @@ export default {
       email:"" ,
       subject:"",
       message:"",
+      formLink:{
+        glitch1: "https://formspree.io/f/mleawylk",
+        glitch2: "https://formspree.io/f/mgerlbjy"
+      },
       status : {
 
           sent:true,
@@ -85,14 +89,14 @@ export default {
       data.append('_replyto',this.email)
       data.append('message',this.detailMessage)
       
-      this.axios.post('https://formspree.io/f/mgerlbjy',data , {
+      this.axios.post(this.formLink.glitch1,data , {
         headers: {
           'Accept': 'application/json',
         },
         // body: data,
       }).then(res =>{
         console.log("response ===" ,res)
-        
+        console.log(this.formLink.glitch1)
         this.status={
           sent : true,
           message :"Thanks for your submission!",
@@ -117,11 +121,11 @@ export default {
 <style scoped>
 .col-1{
   cursor: pointer;
+  padding:2px;
 }
 .contact {
   position: fixed;
-  
-  width: 50px;
+  width: 40px;
   background: rgb(90 46 187);
   top: 70vh;
   right: 0;
@@ -132,8 +136,8 @@ export default {
 .contact.contact-full-width {
   background: rgb(5, 5, 5);
   width: 520px;
-  padding: 18px 21px;
-  top: 53vh;
+  padding: 12px 21px;
+  top: calc(100% - 445px);
   right: 0;
 }
 
@@ -146,11 +150,24 @@ export default {
 .contact-form-active {
   display: none;
 }
+
+.icon {
+  /* animation: uparrow 0.6s ease-in-out infinite alternate ; */
+}
+.icon::before {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  content: "";
+  position: absolute;
+}
 @media (max-width: 767px) and (min-width: 320px) {
-  .contact-full-width {
-    top: 60vh;
+  .contact.contact-full-width {
+    /* top: 33%; */
     right: 0;
-    width: 320px;
+    width: 100vw;
+    padding: 10px;
   }
 }
 </style>

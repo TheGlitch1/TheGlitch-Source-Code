@@ -38,7 +38,7 @@
       </div>
       <!-- mainmenu end. -->
       <!-- select language start. -->
-      <div class="pr-0 text-right col-md-2 col-sm-2">
+      <div class="pr-0 text-right col-md-2 col-sm-2" v-if="i18">
         <div class="secect-language">
           <ul class="list-inline">
             <li>
@@ -83,16 +83,11 @@ export default {
     return {
     //   logo: 'assets/img/logo/logo.svg',
     //   logoFallback: 'assets/img/logo/light-logo.png'
+    i18:false
     }
   },
   mounted() {
-    // this.$nextTick(function() {
-    //   $('#nav').slicknav({
-    //     prependTo: '.mainmenu',
-    //     label: ''
-    //   })
-    // })
-    // $('body').addClass('yassine')
+    
   },
   
   methods: {
