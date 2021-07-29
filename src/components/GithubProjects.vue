@@ -40,7 +40,7 @@
                   <h4 style="margin: 0.3rem 0px;">
                     <a :href="repo.html_url" target="_blank">{{ repo.name }}</a>
                   </h4>
-                  <p class="repo-date">{{ repo.updated_at }}</p>
+                  <p class="repo-date">{{ repo.updated_at | dateToHuman }}</p>
                   <!-- <p class="text-secondary-color">{{repo.description}}</p> -->
                   <ReadMore class="text-secondary-color" :content="repo.description" :showMin=true :min=20 />
 
@@ -184,6 +184,14 @@ import ReadMore from './ReadMore.vue';
           )
         ]
       },
+    },
+    filters:{
+      dateToHuman(value){
+        
+            const options = { year: "numeric", month: "long", day: "numeric" }
+            return new Date(value).toLocaleDateString(undefined, options)
+      
+      }
     }
   }
 </script>
