@@ -1,6 +1,6 @@
 <template>
   <div class="row read-more">
-      <div class="col-md-12 pt-0 mt-0" v-show="load || showMin">
+      <div class="col-md-12 pt-0 mt-0" v-show="load || forceShowMin">
         <ul v-if="bulletStyle" class="content-desc" v-html="`${detailedDescription}`" />
         <p v-else class="description">{{detailedDescription}}</p>
       </div>
@@ -53,6 +53,9 @@ export default {
     },
     minIs(){
       return this.min != null ?  (this.content.length > this.min ? true : false) : false
+    },
+    forceShowMin(){
+      return this.min > 0 || this.showMin ? true : false
     }
   }
 }

@@ -1,7 +1,7 @@
 <template>
     <section id="home" class="Intro-Section relative">
 
-    <div class="container">
+    <div class="container Intro-content">
       <div class="row">
         <div class="col-12 col-md-7">
           <div class="slider-contents">
@@ -9,9 +9,10 @@
               <span class="greeting  text-primary-color">
                 H e l l o
               </span>
+              <hr>
               <h1 class="text-3r text-secondary-color">
                 I'm
-                <span class="name glitch-text">
+                <span class="name glitch-text" >
                   <span class="name glitch-text glitch-span" aria-hidden="true">YASSINE</span>
                   <span class="name glitch-text glitch-span" aria-hidden="true">YASSINE</span>
                   YASSINE
@@ -31,9 +32,10 @@
 
         <div class="col-12 col-md-5 d-none d-md-block">
           <div class="slider-contents-baner relative">
-            <div class="slider-media-hoz">
-              <span class="faded faded-left faded-bottom faded-style-2">
-                <img src="../assets/waneella-2.gif" alt="" sizes="" srcset="" width="100%" />
+            <div class="slider-media-hoz text-center animate-float-up">
+              <span class="faded">
+                <!-- <img src="../assets/waneella-2.gif" alt="" sizes="" srcset="" width="100%" /> -->
+                <img src="../assets/Avatar.png" alt="" sizes="" srcset="" width="70%" />
               </span>
             </div>
           </div>
@@ -66,6 +68,7 @@ export default {
     return {
       //   logo: 'assets/img/logo/logo.svg',
       //   logoFallback: 'assets/img/logo/light-logo.png'
+      gl:false
     };
   },
   mounted() {
@@ -83,25 +86,32 @@ export default {
     setLang(lang) {
       //   this.$i18n.locale = lang
     },
+    glitchIt: function() {
+      this.gl = !this.gl
+			this.$emit('glitchIt', this.gl)
+		}
   },
 };
 </script>
 
 <style scoped>
+.container.Intro-content {
+    padding-top: 21vh;
+}
 
 .into-1 .social{
-  padding-top: 1rem;
+  padding-top: 3rem;
 }
 
 .slider-text {
     /* color: #fff; */
-    padding-top: 30vh;
-    margin-bottom: 75px;
+    padding-top: 14vh;
+    margin-bottom: 14vh;
 }
 
 .slider-media-hoz {
-    padding-top: 12vh;
-    padding-bottom: 30px;
+    padding-top: 4vh;
+    padding-bottom: 4vh;
 }
 
 .greeting{
@@ -137,8 +147,11 @@ export default {
   color: #eee;
 }
 @media (max-width: 767px) and (min-width: 320px){
+  .container.Intro-content {
+    padding-top: 10vh;
+  }
   .slider-text {
-      padding-top: 90px;
+      padding-top: 0px;
       margin-bottom: 50px;
   }
   .Intro-Section {

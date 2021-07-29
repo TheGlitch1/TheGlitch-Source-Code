@@ -12,11 +12,15 @@
               alt="Stormix"
             />
           </router-link> -->
+          <div class="switch-button"><span class="active"></span>
+            <button class="switch-button-case left" :class="{'active-case-1': !glitchlevel }" @click.prevent="glitchItOff">level 1</button>
+            <button class="switch-button-case right" :class="{'active-case-2 ': glitchlevel }" @click.prevent="glitchItOn">Level 2</button>
+          </div>
         </div>
       </div>
       <!-- start mainmenu. -->
       <div class="text-center col-md-8 col-sm-8">
-        <div class="mainmenu">
+        <div class="mainmenu ">
           <ul id="nav" class="list-inline">
             <li class="header-nav current">
               <a href="#home">Home</a>
@@ -83,6 +87,7 @@ export default {
     return {
     //   logo: 'assets/img/logo/logo.svg',
     //   logoFallback: 'assets/img/logo/light-logo.png'
+    glitchlevel:false,
     i18:false
     }
   },
@@ -99,6 +104,14 @@ export default {
     },
     openForm: function() {
 			this.$emit('openForm', true)
+		},
+    glitchItOn: function() { 
+      this.glitchlevel = true  
+			this.$emit('glitchIt', this.glitchlevel)
+		},
+    glitchItOff: function() { 
+      this.glitchlevel = false  
+			this.$emit('glitchIt', this.glitchlevel)
 		}
   }
 }

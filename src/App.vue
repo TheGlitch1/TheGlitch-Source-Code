@@ -1,11 +1,13 @@
 <template>
   <div id="app">
-    <canvas></canvas>
+    <!-- <div v-if="renderComponent"> -->
+    <canvas id="canvas" ref="canvas"></canvas>
+    <!-- </div> -->
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
-    <HeaderComponent :showform="openContact" @openForm="updateOpenContact($event)" />
-    <IntroductionComponent  :profile = "profile" />
-    <AboutComponent :skills="data.skills"
+    <HeaderComponent :showform="openContact"  @openForm="updateOpenContact($event)" @glitchIt="updateHighGlitch($event)"/>
+    <IntroductionComponent  :profile = "profile" @glitchIt="updateHighGlitch($event)"/>
+    <AboutComponent :skills="data.skills" 
       :profile="profile.about"/>
 
     <GithubProjectsComponent :projects="data.projects.entreprise"/>
@@ -49,115 +51,287 @@ export default {
     return{
       profile:json.settings,
       data:json.data,
-      openContact :false
+      openContact :false,
+      highGlitch: false,
+      renderComponent: true,
+      ctx:''
     }
   },
   created(){
-    document.title = "\_The Glitch"
+    document.title = "\_ Yassine Natij : Personal web site "
   },
   mounted() {
-    // this.dataAll = json.data;
-    console.log('profile == ' , this.profile);
-    console.log('data == ' , this.data);
+    this.hireMe()
 
-    const canvas = document.querySelector("canvas");
-    const ctx = canvas.getContext("2d");
-    const colors = [
-      "#b4b2b5",
-      "#dfd73f",
-      "#6ed2dc",
-      "#66cf5d",
-      "#c542cb",
-      "#d0535e",
-      "#3733c9",
-    ];
-    let linePos = 0,
-      rAF;
+//     console.log(` ********** **                  ********  **       ** ** **********   ******  **      **    ** 
+// /////**/// /**                 **//////**/**      // /**/////**///   **////**/**     /**   *** 
+//     /**    /**       *****    **      // /**       **/**    /**     **    // /**     /**  //** 
+//     /**    /******  **///**  /**         /**      /**/**    /**    /**       /**********   /** 
+//     /**    /**///**/*******  /**    *****/**      /**/**    /**    /**       /**//////**   /** 
+//     /**    /**  /**/**////   //**  ////**/**      /**/**    /**    //**    **/**     /**   /** 
+//     /**    /**  /**//******   //******** /********/**/**    /**     //****** /**     /**   ****
+//     //     //   //  //////     ////////  //////// // //     //       //////  //      //   //// `);   
+    // console.log("Hi this is me, \n ... but I'm in a better resolution IRL.")
+    // console.log("")
 
-    canvas.width = innerWidth;
-    canvas.height = innerHeight;
+    this.switchGlitch();
 
-    function texts(color) {
-      // ctx.font = "20vh Bungee Outline";
-      // ctx.shadowBlur = 30;
-      // ctx.shadowColor = color;
-      // ctx.fillStyle = color;
-      // ctx.setTransform(1, -0.15, 0, 1, 0, -10);
-      // // ctx.fillText("Glitch", innerWidth / 2, innerHeight / 2 - 5);
-
-      // ctx.fillStyle = "white";
-      // ctx.shadowBlur = 30;
-      // ctx.shadowColor = color;
-      // ctx.fillText("Glitch", innerWidth / 2, innerHeight / 2);
-
-      // ctx.font = "18vh Bungee Inline";
-      // ctx.shadowBlur = 30;
-      // ctx.shadowColor = color;
-      // ctx.fillStyle = "#fff";
-      // ctx.setTransform(1, -0.15, 0, 1, 0, -10);
-      // ctx.fillText(
-      //   "Effect",
-      //   innerWidth / 2,
-      //   innerHeight / 2 + innerHeight / 10
-      // );
-
-      ctx.textAlign = "center";
-      ctx.textBaseline = "middle";
-    }
-
-    function glitch() {
-      rAF = window.requestAnimationFrame(glitch);
-
-      ctx.fillStyle = "#1a191c";
-      ctx.fillRect(0, 0, innerWidth, innerHeight);
-
-      texts(colors[Math.floor(Math.random() * 7)]);
-      ctx.shadowBlur = 0;
-      ctx.shadowColor = "none";
-      ctx.setTransform(1, 0, 0, 1, 0, 0);
-
-      for (let i = 0; i < 1000; i++) {
-        ctx.fillStyle = `rgba(0,0,0, ${Math.random() * 0.01})`;
-        ctx.fillRect(
-          Math.floor(Math.random() * innerWidth),
-          Math.floor(Math.random() * innerHeight),
-          Math.floor(Math.random() * 30) + 1,
-          Math.floor(Math.random() * 30) + 1
-        );
-
-        ctx.fillStyle = `rgba(0,0,0,${Math.random() * 0.1})`;
-        ctx.fillRect(
-          Math.floor(Math.random() * innerWidth),
-          Math.floor(Math.random() * innerHeight),
-          Math.floor(Math.random() * 25) + 1,
-          Math.floor(Math.random() * 25) + 1
-        );
-      }
-
-      // ctx.fillStyle = colors[Math.floor(Math.random() * 40)];
-      ctx.fillRect(
-        Math.random() * innerWidth,
-        Math.random() * innerHeight,
-        Math.random() * innerWidth,
-        Math.random() * innerHeight
-      );
-      // ctx.setTransform(1, 0, 0, .8, .2, 0);
-      // ctx.setTransform(1, 0, 0, .9, .2, 0);
-    }
-
-    glitch();
-
-    window.addEventListener("resize", () => {
-      canvas.width = innerWidth;
-      canvas.height = innerHeight;
-    });
   },
   methods: {
+    forceRerender() {
+        // Remove my-component from the DOM
+        this.renderComponent = false;
+
+        this.$nextTick(() => {
+          // Add the component back in
+          // this.$refs.canvas.getContext('2d');
+        });
+    },
+     switchGlitch(){
+      //  this.clearCanvas()
+          this.highGlitch ? (this.canvasGlitch2(),console.log("Glitch level 2 Loaded"))
+       : (this.canvasGlitch1(),console.log("Glitch level 1 Loaded"))
+       
+       
+    },
+    canvasGlitch1(){
+          const canvas = document.querySelector("canvas");
+          const ctx = canvas.getContext("2d");
+          const colors = [
+          "#b4b2b5",
+          "#dfd73f",
+          "#6ed2dc",
+          "#66cf5d",
+          "#c542cb",
+          "#d0535e",
+          "#3733c9",
+        ];
+        let linePos = 0,
+          rAF;
+
+        canvas.width = innerWidth;
+        canvas.height = innerHeight;
+
+
+        function glitch() {
+          rAF = window.requestAnimationFrame(glitch);
+
+          ctx.fillStyle = "#1a191c";
+          ctx.fillRect(0, 0, innerWidth, innerHeight);
+
+
+          // rgb(70, 29, 180)
+          for (let i = 0; i < 1000; i++) {
+            ctx.fillStyle = `rgba(0,0,0, ${Math.random() * 0.01})`;
+            ctx.fillRect(
+              Math.floor(Math.random() * innerWidth),
+              Math.floor(Math.random() * innerHeight),
+              Math.floor(Math.random() * 30) + 1,
+              Math.floor(Math.random() * 30) + 1
+            );
+
+            ctx.fillStyle = `rgba(0,0,0,${Math.random() * 0.1})`;
+            ctx.fillRect(
+              Math.floor(Math.random() * innerWidth),
+              Math.floor(Math.random() * innerHeight),
+              Math.floor(Math.random() * 25) + 1,
+              Math.floor(Math.random() * 25) + 1
+            );
+          }
+
+          // ctx.fillStyle = colors[Math.floor(Math.random() * 40)];
+          ctx.fillRect(
+            Math.random() * innerWidth,
+            Math.random() * innerHeight,
+            Math.random() * innerWidth,
+            Math.random() * innerHeight
+          );
+          // ctx.setTransform(1, 0, 0, .8, .2, 0);
+          // ctx.setTransform(1, 0, 0, .9, .2, 0);
+        }
+
+        glitch();
+
+        window.addEventListener("resize", () => {
+          canvas.width = innerWidth;
+          canvas.height = innerHeight;
+        });
+    },
+    canvasGlitch2(){
+           const canvas = document.querySelector("canvas");
+          const ctx = canvas.getContext("2d");
+          const colors = [
+          "#b4b2b5",
+          "#dfd73f",
+          "#6ed2dc",
+          "#66cf5d",
+          "#c542cb",
+          "#d0535e",
+          "#3733c9",
+        ];
+        let linePos = 0,
+          rAF;
+
+        canvas.width = innerWidth;
+        canvas.height = innerHeight;
+
+
+        function glitch() {
+          rAF = window.requestAnimationFrame(glitch);
+
+          ctx.fillStyle = "#1a191c";
+          ctx.fillRect(0, 0, innerWidth, innerHeight);
+
+          // texts(colors[Math.floor(Math.random() * 7)]);
+          // ctx.shadowBlur = 0;
+          // ctx.shadowColor = "none";
+          // ctx.setTransform(1, 0, 0, 1, 0, 0);
+
+          for (let i = 0; i < 1000; i++) {
+            ctx.fillStyle = `rgba(0,0,0, ${Math.random() * 0.01})`;
+            ctx.fillRect(
+              Math.floor(Math.random() * innerWidth),
+              Math.floor(Math.random() * innerHeight),
+              Math.floor(Math.random() * 30) + 1,
+              Math.floor(Math.random() * 30) + 1
+            );
+
+            ctx.fillStyle = `rgba(0,0,0,${Math.random() * 0.1})`;
+            ctx.fillRect(
+              Math.floor(Math.random() * innerWidth),
+              Math.floor(Math.random() * innerHeight),
+              Math.floor(Math.random() * 25) + 1,
+              Math.floor(Math.random() * 25) + 1
+            );
+          }
+
+          ctx.fillStyle = colors[Math.floor(Math.random() * 40)];
+          ctx.fillRect(
+            Math.random() * innerWidth,
+            Math.random() * innerHeight,
+            Math.random() * innerWidth,
+            Math.random() * innerHeight
+          );
+          // ctx.setTransform(1, 0, 0, .8, .2, 0);
+          // ctx.setTransform(1, 0, 0, .9, .2, 0);
+        }
+
+        glitch();
+
+        window.addEventListener("resize", () => {
+          canvas.width = innerWidth;
+          canvas.height = innerHeight;
+        });
+    },
+    canvasNormal(){
+      //jQuery included via codepen site
+        const canvas = document.querySelector("canvas");
+        // var canvas = $('#canvas');
+        this.ctx = canvas.getContext("2d");
+        this.ctx.clearRect(0, 0, canvas.width, canvas.height)
+        canvas.width  = innerWidth
+        canvas.height = innerHeight;
+        //a gradient object can be assigned as a fillStyle OR a strokeStyle. create a gradient object the same way you'd create an image object - by declaring it as a variable:
+        var grad1 =  this.ctx.createLinearGradient(0, 0, 0, canvas.height);
+        //the .createLinearGradient method creates a linear gradient object in our drawing surface ('ctx'). the first two numbers are the starting point; the next two are the end point. the gradient is oriented to these points.
+
+        // grad1.addColorStop(0, 'hotpink');
+        // grad1.addColorStop(.5, 'orange');
+        // grad1.addColorStop(1, 'yellow');
+        grad1.addColorStop(0, "rgb(70, 29, 180)");
+        // grad1.addColorStop(.4, "rgb(93, 42, 122)");
+        // grad1.addColorStop(.6, "rgb(93, 42, 122)");
+        grad1.addColorStop(1, "rgb(209, 114, 188)");
+        // grad1.addColorStop(1, "#4f4297");
+
+        //.addColorStop assigns a specific color to the gradient, relative to its start and end points. above, the gradient is hotpink at its starting point, orange at its halfway mark (.5), and yellow at the end (1).
+        // rAF = window.requestAnimationFrame();
+         this.ctx.fillStyle = grad1;
+        //this assigns the gradient object as our fillStyle
+         this.ctx.fillRect(0, 0, innerWidth, innerHeight);
+        // ctx.rect(10, 10, 480, 235);
+        // ctx.rect(10, 255, 480, 235);
+        //the gradient's position is relative to the canvas, not the objects it fills
+        
+        ctx.fill();
+        window.addEventListener("resize", () => {
+          canvas.width = innerWidth;
+          canvas.height = innerHeight;
+        });
+  
+    },
+    clearCanvas () {
+      this.ctx.clearRect(0, 0, canvas.width, canvas.height)
+    },
     parseMedata() {
       
     },
     updateOpenContact(value){
       this.openContact = value
+    },
+    updateHighGlitch(value){
+      this.highGlitch = value
+    },
+    printPicture(){
+       console.log(`                                                                                          
+                                                                                                                    
+                                                              ((/(#(((((.                                          
+                                                          *(((/(#((%%###%#(#(,                                      
+                                                      (((#%%%%%%#%%#%##%####(((                                    
+                                                    /(((((/,,,............,,*//(                                   
+                                                      (*,,......................*/.                                 
+                                                    (/,,,,,.....................,/.                                
+                                                    */,,,,,.....        .........**                                
+                                                    /**,,,........ .. ..,*///**..,*.                               
+                                                    /*,,/##/*///*,...,,,,.....,,,.,*..                             
+                                                    .*,,,***,,/*,*/,...,,,.##.//,...,..                             
+                                                    ,,,,,,****,,,,,,. .....,,........,.                             
+                                                    ,/.,,.........,,.. ....    ........                             
+                                                    ,*,,,,.......,.,,...,...  ......,..                             
+                                                    .,,,,,.......,****,..........,..                               
+                                                        ,,,,,,,,,,..,..,,...,,...,,,                                
+                                                        ,*,,,**((**,,,.,,,,,,,,,,..                                
+                                                          ,****,,,,,*/(*,,,,,,,,*,,.                                
+                                                          *////**,,.........,,**/*,,                                
+                                                          **/(#((/*,,,,,***((((*,,,,/(                              
+                                                    ###(*****/(###%####(##(/*,,,,,,,/##(*,                         
+                                                /(#%#%(*/*******///((////***,,...,,*(%####(((/*                    
+                                            /(####%%%%(****,,,,,*****,,,,,,,...,,,,*#%#######((#(((/               
+                                        */((#(#%%%#%%#%#%**,,,,,,,,***,,,,,.,,,.,,/#%%##############((/(*           
+                                    /((###(##########%%#%##%%#**,,,,,***,,,,,,((################(#(#((##((((/,      
+                              .(((((######%#######(######%%%#%%#%%#%%#%##%#%%%%#%###%%%##(#(###(##(##(#(#(#((((/   
+                            /(###########%%#####(###%%%##%#%%#####%######%#(#%###(######((####((((((###((###(###(/ 
+                            (#####%##%%#((##(###%%##(((((##########%#%#%%#######%##########(((((#(((/(#(((########((
+                          .#%%%%%#%########((((####(((###((##(((###%#%(%####((##(((/(##(/(#((((((((/((((############
+                          #%%%%#%%###((#(###((((((####(#(((##(#((((#((#((((##%(###############(((((((#(((#(#####%%##
+                          %%#%%%%#######((###((#(((((((##(#(##########%%%#######(###((((#((((((((((((###(###########
+                          %%%%%%%#(####(#(######(#/(((#((#((#(#########(######/(#(#(##(((((((((((((##(#((###(######%
+                          %%%%%%%%%#(#%########(((((#(((((#((((#(#/(//(##((((#((((((##(((#((((((((((###(##(####(%##%
+                          %%%%#%####%%%(#(((#(####(((##(#(###((#(#(#((#((#((((((((#((((((((((((############((#####%#
+                          %%%%#%%###%#%#####((######((#(((#(#(##(((##(((((#((((((((((((((((((/#(((##############%###
+                          `);
+    },
+    hireMe(){
+      var style = "font-size: 14px;" +
+      "background: #65339c; /* fallback for old browsers */" + 
+      "background: -webkit-linear-gradient(to right, #351277, #65339c); /* Chrome 10-25, Safari 5.1-6 */" +
+      "background: linear-gradient(to right, #351277, #65339c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */" +
+      "color: white;" +
+      "text-align: center;" +
+      "padding: 10px 15px;" +
+      "width: 100%;" +
+      "border-radius: 20px;";
+
+      var text = "%cLet's talk business🙏. natij.yas@gmail.com";
+      let info = "Made with with VUE 💚";
+
+      console.log(info);
+      console.log(text, style);
+    }
+  },
+  watch: {
+    highGlitch: function (val) {
+      this.switchGlitch()
     }
   },
 };
@@ -388,9 +562,69 @@ canvas {
   100% { transform: translateX(0.4em); opacity: 0.9 }
 }
 
+.animate-float-up{
+  animation: floatpulse 3s  ease-in-out infinite  ;
+  /* animation-delay: 6s; */
+}
+
+@-webkit-keyframes floatpulse {
+  0% { transform: translateY(0); opacity: 0.9 }
+ 
+  50% { transform: translateY(0.7em); opacity: 0.4}
+
+  100% { transform: translateY(0); opacity: 0.9}
+
+}
+@keyframes floatpulse {
+  0% { transform: translateY(0);  opacity: 0.9}
+ 
+  50% { transform: translateY(0.7em); opacity: 0.4}
+
+  100% { transform: translateY(0); opacity: 0.9}
+}
+
+.switch-button {
+  /* width: 300px; */
+  font-size:9px;
+  height: 40px;
+  text-align: center;
+  position: relative;
+  padding: 3px 9px;
+  transform: translate3D(14%, 24%, 0);
+  will-change: transform;
+  /* z-index: 197 !important; */
+  cursor: pointer;
+  transition: 0.6s cubic-bezier(0.4, 0, 1, 1) all;
+}
+.switch-button-case {
+  display: inline-block;
+  background: none;
+  width: 49%;
+  height: 100%;
+  color: white;
+  position: relative;
+  border: none;
+  transition: 0.3s ease all;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  padding-bottom: 1px;
+}
+.switch-button-case.active-case-2 {
+    background-color: var(--special-color);
+    color: var(--on-primary-color);
+}
+.switch-button-case.active-case-1 {
+    background-color: var(--on-primary-color);
+    color: var(--special-color);
+}
 .name {
   font-size: 5rem;
 }
+
+.glitch {
+  animation: glitchy 0.3s ease infinite reverse;
+}
+
 .glitch-text {
   position: relative;
   font-size: inherit;
@@ -533,7 +767,7 @@ canvas {
     text-transform: uppercase;
     padding-left: 30px;
     font-family: Roboto Mono;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
 }
 
 .eff-1::before{

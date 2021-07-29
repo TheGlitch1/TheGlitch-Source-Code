@@ -42,7 +42,7 @@
                   </h4>
                   <p class="repo-date">{{ repo.updated_at }}</p>
                   <!-- <p class="text-secondary-color">{{repo.description}}</p> -->
-                  <ReadMore class="text-secondary-color" :content="repo.description" :showMin=true :min=40 />
+                  <ReadMore class="text-secondary-color" :content="repo.description" :showMin=true :min=20 />
 
                   <!-- <read-more
                     more-str="Read more"
@@ -165,7 +165,6 @@ import ReadMore from './ReadMore.vue';
             });
             // this.repos.sort((a, b) => (a.stargazers < b.stargazers ? 1 : -1))
             // this.repos.sort((a, b) => (a.watchers < b.watchers ? 1 : -1))
-            console.log(this.repos)
             this.repos = this.repos.filter(repo => !repo.full_name.match("TheGlitch1.github.io"))
             this.repos = [...this.repos,...this.projects]
             this.repos.sort(function(a,b){
@@ -223,12 +222,10 @@ li.active,li:hover {
 
 .github-item {
   padding: 2.5rem;
-  margin-left: 1rem;
-  /* background: #121213; */
-  background: #09090a;
-  transition: all 0.3s ease-in-out;
-  min-height: 300px;
-  min-width: 370px;
+    margin-left: 1rem;
+    background: #090909;
+    transition: all 0.3s ease-in-out;
+    min-height: 300px;
 }
 
 .service-teatimonial-item-inner {

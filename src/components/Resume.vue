@@ -30,7 +30,7 @@
             <h3 v-if="education.icon" :html="`${education.icon} ${education.title}`" />
             <h3 v-else v-html="education.title" />
             <!-- <p class="content-main-description" v-html="education.subtitle" /> -->
-            <ReadMore :content="education.subtitle" :showMin=true :min=40 />
+            <ReadMore :content="education.subtitle" :min=40 />
             <a href="#">
               <h4>{{ education.location }}</h4>
             </a>
