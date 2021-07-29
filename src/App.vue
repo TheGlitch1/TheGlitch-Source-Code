@@ -813,4 +813,10 @@ canvas {
 .text-right {
     text-align: right;
 }
+
+@media (max-width: 767px) and (min-width: 320px){
+  .switch-button{
+    transform: unset;
+  }
+}
 </style>
