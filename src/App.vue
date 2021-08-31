@@ -5,7 +5,7 @@
     <!-- </div> -->
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
-    <HeaderComponent :showform="openContact"  @openForm="updateOpenContact($event)" @glitchIt="updateHighGlitch($event)"/>
+    <HeaderComponent :showform="openContact"  @openForm="updateOpenContact($event)" :glitchStatus="highGlitch" @glitchIt="updateHighGlitch($event)"/>
     <IntroductionComponent  :profile = "profile" @glitchIt="updateHighGlitch($event)"/>
     <AboutComponent :skills="data.skills" 
       :profile="profile.about"/>
@@ -52,9 +52,10 @@ export default {
       profile:json.settings,
       data:json.data,
       openContact :false,
-      highGlitch: false,
+      highGlitch: localStorage.appTheme ? localStorage.appTheme : false,
       renderComponent: true,
-      ctx:''
+      ctx:'',
+      appTheme: localStorage.appTheme ? localStorage.appTheme : false,
     }
   },
   created(){
@@ -62,18 +63,6 @@ export default {
   },
   mounted() {
     this.hireMe()
-
-//     console.log(` ********** **                  ********  **       ** ** **********   ******  **      **    ** 
-// /////**/// /**                 **//////**/**      // /**/////**///   **////**/**     /**   *** 
-//     /**    /**       *****    **      // /**       **/**    /**     **    // /**     /**  //** 
-//     /**    /******  **///**  /**         /**      /**/**    /**    /**       /**********   /** 
-//     /**    /**///**/*******  /**    *****/**      /**/**    /**    /**       /**//////**   /** 
-//     /**    /**  /**/**////   //**  ////**/**      /**/**    /**    //**    **/**     /**   /** 
-//     /**    /**  /**//******   //******** /********/**/**    /**     //****** /**     /**   ****
-//     //     //   //  //////     ////////  //////// // //     //       //////  //      //   //// `);   
-    // console.log("Hi this is me, \n ... but I'm in a better resolution IRL.")
-    // console.log("")
-
     this.switchGlitch();
 
   },
@@ -95,6 +84,7 @@ export default {
        
     },
     canvasGlitch1(){
+          localStorage.appTheme = false
           const canvas = document.querySelector("canvas");
           const ctx = canvas.getContext("2d");
           const colors = [
@@ -158,6 +148,7 @@ export default {
         });
     },
     canvasGlitch2(){
+          localStorage.appTheme = true
            const canvas = document.querySelector("canvas");
           const ctx = canvas.getContext("2d");
           const colors = [

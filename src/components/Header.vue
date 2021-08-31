@@ -82,12 +82,12 @@ import 'slicknav/dist/slicknav.min.css'
 
 export default {
   name: 'HeaderComponent',
-  props :['showform'],
+  props :['showform','glitchStatus'],
   data() {
     return {
     //   logo: 'assets/img/logo/logo.svg',
     //   logoFallback: 'assets/img/logo/light-logo.png'
-    glitchlevel:false,
+    glitchlevel:this.glitchStatus,
     i18:false
     }
   },
