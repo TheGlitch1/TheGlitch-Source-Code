@@ -52,9 +52,9 @@ export default {
       profile:json.settings,
       data:json.data,
       openContact :false,
-      highGlitch: localStorage.appTheme ? localStorage.appTheme : false,
+      highGlitch: localStorage.appTheme === 'true' ? localStorage.appTheme : false,
       renderComponent: true,
-      ctx:'',
+      // ctx:'',
       appTheme: localStorage.appTheme ? localStorage.appTheme : false,
     }
   },
@@ -78,13 +78,13 @@ export default {
     },
      switchGlitch(){
       //  this.clearCanvas()
-          this.highGlitch ? (this.canvasGlitch2(),console.log("Glitch level 2 Loaded"))
-       : (this.canvasGlitch1(),console.log("Glitch level 1 Loaded"))
+          this.highGlitch ? (this.canvasGlitch1(),console.log("Glitch level 2 Loaded"))
+       : (this.canvasNormal(),console.log("Glitch level 1 Loaded"))
        
        
     },
     canvasGlitch1(){
-          localStorage.appTheme = false
+          localStorage.appTheme = true
           const canvas = document.querySelector("canvas");
           const ctx = canvas.getContext("2d");
           const colors = [
@@ -215,15 +215,17 @@ export default {
         });
     },
     canvasNormal(){
+      localStorage.appTheme = false
+
       //jQuery included via codepen site
         const canvas = document.querySelector("canvas");
         // var canvas = $('#canvas');
-        this.ctx = canvas.getContext("2d");
-        this.ctx.clearRect(0, 0, canvas.width, canvas.height)
+        const ctx = canvas.getContext("2d");
+        ctx.clearRect(0, 0, canvas.width, canvas.height)
         canvas.width  = innerWidth
         canvas.height = innerHeight;
         //a gradient object can be assigned as a fillStyle OR a strokeStyle. create a gradient object the same way you'd create an image object - by declaring it as a variable:
-        var grad1 =  this.ctx.createLinearGradient(0, 0, 0, canvas.height);
+        var grad1 =  ctx.createLinearGradient(0, 0, 0, canvas.height);
         //the .createLinearGradient method creates a linear gradient object in our drawing surface ('ctx'). the first two numbers are the starting point; the next two are the end point. the gradient is oriented to these points.
 
         // grad1.addColorStop(0, 'hotpink');
@@ -237,9 +239,9 @@ export default {
 
         //.addColorStop assigns a specific color to the gradient, relative to its start and end points. above, the gradient is hotpink at its starting point, orange at its halfway mark (.5), and yellow at the end (1).
         // rAF = window.requestAnimationFrame();
-         this.ctx.fillStyle = grad1;
+         ctx.fillStyle = grad1;
         //this assigns the gradient object as our fillStyle
-         this.ctx.fillRect(0, 0, innerWidth, innerHeight);
+          ctx.fillRect(0, 0, innerWidth, innerHeight);
         // ctx.rect(10, 10, 480, 235);
         // ctx.rect(10, 255, 480, 235);
         //the gradient's position is relative to the canvas, not the objects it fills
