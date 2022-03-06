@@ -6,7 +6,7 @@
                   <div class="slider-contents-baner">
                    <div class="slider-media-hoz">
                        <span class="faded faded-right faded-top faded-style-2">
-                          <img src="../assets/about-me.gif" alt="" sizes="" srcset="" width="100%" />
+                          <img src="../assets/undraw_laravel_and_vue_-59-tp.svg" alt="" sizes="" srcset="" width="95%" />
                         </span>
                   </div>
                  </div>

@@ -2,24 +2,8 @@
   <header id="sticker" class="header-top">
     <div class="container-fulid">
       <div class="row">
-
-        <div class="col-md-2 col-sm-2">
-        <div class="logo">
-          <!-- <router-link tag="a" to="/" class="overlay">
-            <img
-              :src="logoFallback"
-              :onerror="`this.onerror=null; this.src='${logoFallback}'`"
-              alt="Stormix"
-            />
-          </router-link> -->
-          <div class="switch-button"><span class="active"></span>
-            <button class="switch-button-case left" :class="{'active-case-1': !glitchlevel }" @click.prevent="glitchItOff">level 1</button>
-            <button class="switch-button-case right" :class="{'active-case-2 ': glitchlevel }" @click.prevent="glitchItOn">Level 2</button>
-          </div>
-        </div>
-      </div>
       <!-- start mainmenu. -->
-      <div class="text-center col-md-8 col-sm-8">
+      <div class="text-center col-md-12 col-sm-12">
         <div class="mainmenu ">
           <ul id="nav" class="list-inline">
             <li class="header-nav current">
@@ -106,11 +90,11 @@ export default {
 			this.$emit('openForm', true)
 		},
     glitchItOn: function() { 
-      this.glitchlevel = true  
+      this.glitchlevel = "glitch_1"  
 			this.$emit('glitchIt', this.glitchlevel)
 		},
     glitchItOff: function() { 
-      this.glitchlevel = false  
+      this.glitchlevel = "glitch_2"
 			this.$emit('glitchIt', this.glitchlevel)
 		}
   }
@@ -127,6 +111,13 @@ header * {
 	background: transparent;
 	padding: 1rem 0rem;
 } */
+.header-top{
+  position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    background-color: #1a191c;
+}
 .mainmenu,.secect-language {
     /* text-align: center; */
     margin-top: 8px;

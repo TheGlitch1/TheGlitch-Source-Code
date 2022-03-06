@@ -51,7 +51,7 @@ export default {
   props: ["showform"],
   data() {
     return {
-      // showform: this.showform,
+      Propshowform: this.showform,
       email:"" ,
       subject:"",
       message:"",
@@ -79,6 +79,7 @@ export default {
     updateState() {
       this.showform = !this.showform;
       this.$emit("openForm", this.showform);
+      this.$emit("openSettings", false);
     },
     postNow() {
       this.status={

@@ -7,17 +7,19 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 
 import 'bootstrap/dist/css/bootstrap.css'
+import './assets/style.css'
+// import "https://cdn.lordicon.com/lusqsztk.js"
 
 Vue.use(VueCarousel);
 Vue.use(VueAxios, axios)
 
 Vue.config.productionTip = false
-/*
-Global components 
-*/
-// import HeaderComponent from '@/components/Header'
-// import IntroductionComponent from '@/components/Introduction'
-// import AboutComponent from '@/components/About'
+    /*
+    Global components 
+    */
+    // import HeaderComponent from '@/components/Header'
+    // import IntroductionComponent from '@/components/Introduction'
+    // import AboutComponent from '@/components/About'
 
 // Vue.component('HeaderComponent ',Header )
 // Vue.component('IntroductionComponent',Introduction)
@@ -25,5 +27,5 @@ Global components
 
 
 new Vue({
-  render: h => h(App),
+    render: h => h(App),
 }).$mount('#app')

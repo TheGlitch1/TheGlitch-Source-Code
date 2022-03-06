@@ -11,10 +11,14 @@
       :profile="profile.about"/>
 
     <GithubProjectsComponent :projects="data.projects.entreprise"/>
-    <ResumeComponent :resume="data.resume" />
+    <ResumeComponent2 v-if="resumechild == 0" :resume="data.resume" />
+    <ResumeComponent v-else :resume="data.resume" />
+
 
     <!-- <ContactComponent :settings="settings" :showform="openContact" /> -->
-    <ContactComponent :showform="openContact" @openForm="updateOpenContact($event)" />
+    <ContactComponent :showform="openContact" @openForm="updateOpenContact($event)"  @openSettings="updateOpenSettings($event)"/>
+    <SettingsComponent @openForm="updateOpenContact($event)" :showSettings="openSettings" @openSettings="updateOpenSettings($event)" :glitchStatus="highGlitch" @glitchIt="updateHighGlitch($event)"
+     :resumePar="resumechild" @resumeStyle="updateResumeStyle($event)" />
     <!-- <FooterComponent /> -->
 
     <!-- <section id="introduction"></section>
@@ -32,8 +36,10 @@ import HeaderComponent from "./components/Header.vue";
 import IntroductionComponent from "./components/Introduction.vue";
 import AboutComponent from "./components/About.vue";
 import ResumeComponent from "./components/Resume.vue";
+import ResumeComponent2 from "./components/Resume2.vue";
 import GithubProjectsComponent from "./components/GithubProjects.vue";
 import ContactComponent from "./components/Contact.vue";
+import SettingsComponent from "./components/Settings.vue";
 import FooterComponent from "./components/Footer.vue";
 
 export default {
@@ -43,8 +49,10 @@ export default {
     IntroductionComponent,
     AboutComponent,
     ResumeComponent,
+    ResumeComponent2,
     GithubProjectsComponent,
     ContactComponent,
+    SettingsComponent,
     FooterComponent
   },
   data(){
@@ -52,14 +60,17 @@ export default {
       profile:json.settings,
       data:json.data,
       openContact :false,
-      highGlitch: localStorage.appTheme === 'true' ? localStorage.appTheme : false,
+      openSettings :false,
+      glitchLvl:["OFF","glitch_1","glitch_2"],
+      highGlitch: localStorage.appTheme ? localStorage.appTheme : "glitch_1",
       renderComponent: true,
-      // ctx:'',
-      appTheme: localStorage.appTheme ? localStorage.appTheme : false,
+      resumechild:0,
+      appTheme: localStorage.appTheme ? localStorage.appTheme : "OFF",
+      
     }
   },
   created(){
-    document.title = "\_ Yassine Natij : Personal web site "
+    document.title = " Yassine  : Personal web site "
   },
   mounted() {
     this.hireMe()
@@ -78,13 +89,21 @@ export default {
     },
      switchGlitch(){
       //  this.clearCanvas()
-          this.highGlitch ? (this.canvasGlitch1(),console.log("Glitch level 2 Loaded"))
-       : (this.canvasNormal(),console.log("Glitch level 1 Loaded"))
+      //     this.highGlitch ? (this.canvasGlitch1(),console.log("Glitch level 2 Loaded"))
+      //  : (this.canvasNormal(),console.log("Glitch level 1 Loaded"))
        
+       if(this.highGlitch=="glitch_2"){
+         this.canvasGlitch2()
+       }
+       else if(this.highGlitch=="glitch_1"){
+         this.canvasGlitch1()
+       }else{
+         this.clearCanvas()
+       }
        
     },
     canvasGlitch1(){
-          localStorage.appTheme = true
+                localStorage.appTheme = "glitch_1"
           const canvas = document.querySelector("canvas");
           const ctx = canvas.getContext("2d");
           const colors = [
@@ -148,7 +167,7 @@ export default {
         });
     },
     canvasGlitch2(){
-          localStorage.appTheme = true
+          localStorage.appTheme = "glitch_2"
            const canvas = document.querySelector("canvas");
           const ctx = canvas.getContext("2d");
           const colors = [
@@ -215,7 +234,7 @@ export default {
         });
     },
     canvasNormal(){
-      localStorage.appTheme = false
+      localStorage.appTheme = "glitch_1"
 
       //jQuery included via codepen site
         const canvas = document.querySelector("canvas");
@@ -254,7 +273,11 @@ export default {
   
     },
     clearCanvas () {
-      this.ctx.clearRect(0, 0, canvas.width, canvas.height)
+      localStorage.appTheme = "OFF"
+      const canvas = document.querySelector("canvas");
+      const ctx = canvas.getContext("2d");
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(x, y, width, height);
     },
     parseMedata() {
       
@@ -262,8 +285,14 @@ export default {
     updateOpenContact(value){
       this.openContact = value
     },
+    updateOpenSettings(value){
+      this.openSettings = value
+    },
     updateHighGlitch(value){
-      this.highGlitch = value
+      this.highGlitch = value;
+    },
+    updateResumeStyle(value){
+      this.resumechild = value;
     },
     printPicture(){
        console.log(`                                                                                          
@@ -420,6 +449,8 @@ canvas {
   font-weight: 600;
   letter-spacing: 2px;
   padding: 14px 40px;
+  cursor: pointer;
+
   /* z-index: 10; */
 }
 

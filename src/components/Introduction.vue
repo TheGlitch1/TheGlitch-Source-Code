@@ -3,7 +3,7 @@
 
     <div class="container Intro-content">
       <div class="row">
-        <div class="col-12 col-md-7">
+        <div class="col-12 col-md-6">
           <div class="slider-contents">
             <div class="slider-text">
               <span class="greeting  text-primary-color">
@@ -13,11 +13,11 @@
               <h1 class="text-3r text-secondary-color">
                 I'm
                 <span class="name glitch-text" >
-                  <span class="name glitch-text glitch-span" aria-hidden="true">YASSINE</span>
-                  <span class="name glitch-text glitch-span" aria-hidden="true">YASSINE</span>
-                  YASSINE
+                  <span class="name glitch-text glitch-span" aria-hidden="true">Firstname</span>
+                  <span class="name glitch-text glitch-span" aria-hidden="true">Firstname</span>
+                  Firstname
                 </span>
-                Natij
+                Lastname
               </h1>
               <p class="desc1 text-secondary-color">
                 I'm a Fullstack Engineer. Implemented enterprise web applications and CMS based solutions using frameworks like Laravel and Vue.
@@ -30,12 +30,14 @@
 
         </div>
 
-        <div class="col-12 col-md-5 d-none d-md-block">
+        <div class="col-12 col-md-6 d-none d-md-block">
           <div class="slider-contents-baner relative">
-            <div class="slider-media-hoz text-center animate-float-up">
+            <div class="slider-media-hoz text-center "> <!-- animate-float-up Addthis class to allow animation-->
               <span class="faded">
                 <!-- <img src="../assets/waneella-2.gif" alt="" sizes="" srcset="" width="100%" /> -->
-                <img src="../assets/Avatar.png" alt="" sizes="" srcset="" width="70%" />
+                <img src="../assets/undraw_hello.svg" alt="" sizes="" srcset="" width="100%" />
+                <span class="inception"><img src="../assets/website-bg.png" alt="" sizes="" srcset="" width="100%" />
+                </span>
               </span>
             </div>
           </div>
@@ -107,6 +109,30 @@ export default {
     /* color: #fff; */
     padding-top: 14vh;
     margin-bottom: 14vh;
+}
+
+.slider-contents-baner {
+      padding-top: 5vh;
+    /* margin-bottom: 14vh; */
+}
+
+.inception{
+  position: absolute;
+  z-index: 1;
+  bottom: calc(100% - 29%);
+    left: calc(100% - 50%);
+    width: calc(100% - 78.5%);
+  /* box-shadow:
+    0 0 60px 30px #fff,  
+    0 0 100px 60px #f0f, 
+    0 0 140px 90px #0ff;  */
+
+    /* box-shadow:
+    0 0 30px 10px #fff,  
+    0 0 80px 50px #f0f, 
+    0 0 84px 23px #0ff;  */
+    box-shadow: 0 0 24px 4px #ffffff3b, 0 0 43px 11px #ff00ff6b, 0 0 33px -2px #00ffffb5, inset -11px 59px 47px -4px;
+    /* box-shadow: 0 0 24px 4px #ffffff3b, 0 0 47px 13px #ff00ff6b, 0 0 65px 16px #00ffffb5, inset -40px 50px 40px -8px; */
 }
 
 .slider-media-hoz {

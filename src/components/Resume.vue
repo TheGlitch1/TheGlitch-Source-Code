@@ -14,7 +14,8 @@
         <div class="col-md-6 no-padding">
           <div class="content-left">
             <h2 class="text-3r resume-heading text-primary-color">
-              <i class="ti-crown" />
+              <!-- <i class="ti-crown" /> -->
+              <span><img src="../assets/education.svg"  alt="" sizes="" srcset="" class="" width="10%" /></span> 
               Education
             </h2>
           </div> <!--content-left-End -->
@@ -28,9 +29,9 @@
             <!-- List all educations -->
             <span class="content-date">{{education.date}}</span>
             <h3 v-if="education.icon" :html="`${education.icon} ${education.title}`" />
-            <h3 v-else v-html="education.title" />
-            <!-- <p class="content-main-description" v-html="education.subtitle" /> -->
-            <ReadMore :content="education.subtitle" :min=40 />
+            <h3 v-else v-html="`${education.subtitle}`" />
+            <p class="content-main-description" v-html="'@'+ education.title" />
+            <ReadMore :content="education.description" :min=40 />
             <a href="#">
               <h4>{{ education.location }}</h4>
             </a>
@@ -40,8 +41,9 @@
           <div class="col-md-6 no-padding">
             <div class="content-left">
                 <h2 class="text-3r resume-heading text-primary-color">
-                  <i class="ti-crown" />
-                    Experience
+                  <!-- <i class="ti-crown" /> -->
+                   <span><img src="../assets/experience.svg"  alt="" sizes="" srcset="" class="" width="10%" /></span> 
+                   Experience
                 </h2>
           </div>
           <div
@@ -145,13 +147,17 @@ span.stack {
     margin-top: 25px;
     margin-bottom: 13px;
     position: relative;
+    gap: 6px;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
     /* padding-left: 45px; */
 }
 
 .content-main h3 > img {
-    position: absolute;
+    /* position: absolute;
     top: -4px;
-    left: 0;
+    left: 0; */
 }
 
 .content-main p {
