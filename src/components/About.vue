@@ -5,7 +5,7 @@
                 <div class="col-12 col-md-5 d-none d-md-block">
                   <div class="slider-contents-baner">
                    <div class="slider-media-hoz">
-                       <span class="faded faded-right faded-top faded-style-2">
+                       <span :class="glitchStatus !='OFF' ? 'faded faded-right faded-top faded-style-2':''">
                           <img src="../assets/undraw_laravel_and_vue_-59-tp.svg" alt="" sizes="" srcset="" width="95%" />
                         </span>
                   </div>
@@ -50,6 +50,10 @@ export default ({
       default: () => {
         return {}
       }
+    },
+    glitchStatus:{
+      type: String,
+      default:() => '',
     }
   },
 

@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="no-glitch-bg">
     <!-- <div v-if="renderComponent"> -->
     <canvas id="canvas" ref="canvas"></canvas>
     <!-- </div> -->
@@ -8,7 +8,7 @@
     <HeaderComponent :showform="openContact"  @openForm="updateOpenContact($event)" :glitchStatus="highGlitch" @glitchIt="updateHighGlitch($event)"/>
     <IntroductionComponent  :profile = "profile" @glitchIt="updateHighGlitch($event)"/>
     <AboutComponent :skills="data.skills" 
-      :profile="profile.about"/>
+      :profile="profile.about" :glitchStatus="highGlitch"/>
 
     <GithubProjectsComponent :projects="data.projects.entreprise"/>
     <ResumeComponent2 v-if="resumechild == 0" :resume="data.resume" />
@@ -70,7 +70,7 @@ export default {
     }
   },
   created(){
-    document.title = " Yassine  : Personal web site "
+    document.title = "Yassine NATIJ : Personal web site "
   },
   mounted() {
     this.hireMe()
@@ -277,7 +277,6 @@ export default {
       const canvas = document.querySelector("canvas");
       const ctx = canvas.getContext("2d");
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.clearRect(x, y, width, height);
     },
     parseMedata() {
       
@@ -354,6 +353,7 @@ export default {
   watch: {
     highGlitch: function (val) {
       this.switchGlitch()
+      val == "OFF" ? location.reload() : ''
     }
   },
 };
@@ -379,6 +379,9 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
   margin: 0;
+}
+.no-glitch-bg{
+  background-color: rgb(26, 43, 61);
 }
 .text-primary-color{
   color:var(--text-primary-color)
@@ -423,7 +426,7 @@ canvas {
   padding: 0;
   margin: 0;
   /* width: 100%!important; */
-  z-index: -4;
+  z-index: 0;
   position: fixed;
   left: 0;
   top: 0;

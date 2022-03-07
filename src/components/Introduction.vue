@@ -13,11 +13,11 @@
               <h1 class="text-3r text-secondary-color">
                 I'm
                 <span class="name glitch-text" >
-                  <span class="name glitch-text glitch-span" aria-hidden="true">Firstname</span>
-                  <span class="name glitch-text glitch-span" aria-hidden="true">Firstname</span>
-                  Firstname
+                  <span class="name glitch-text glitch-span" aria-hidden="true">Yassine</span>
+                  <span class="name glitch-text glitch-span" aria-hidden="true">Yassine</span>
+                  Yassine
                 </span>
-                Lastname
+                NATIJ
               </h1>
               <p class="desc1 text-secondary-color">
                 I'm a Fullstack Engineer. Implemented enterprise web applications and CMS based solutions using frameworks like Laravel and Vue.

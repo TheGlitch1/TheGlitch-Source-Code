@@ -105,7 +105,7 @@ export default {
       this.tab=position
       this.$emit('glitchIt',this.glitchLvl[position]); // send 1:0 true or false
     },
-        checkGlitch(){
+    checkGlitch(){
       let tposition = '';
       
       if( this.glitchStatus == "glitch_1"){

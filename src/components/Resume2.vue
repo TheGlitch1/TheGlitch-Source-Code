@@ -156,6 +156,7 @@ export default {
 .logo-img {
   /* to black */
   filter: invert(1) sepia(0) saturate(0) hue-rotate(139deg) brightness(0.5);
+  transition: all 0.3s ease-in-out;
   /* or to blue */
   /* filter: invert(1) sepia(1) saturate(5) hue-rotate(175deg); */
 }
