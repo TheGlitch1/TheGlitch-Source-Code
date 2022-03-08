@@ -28,7 +28,7 @@
         <div class="col-12" :class="{ 'd-none': !showSettings }">
           <div class="contact-form" :class="{ 'contact-form-active': !showSettings }">
             <!-- toggle switch theme -->
-            <span>Choose your Theme</span>
+            <span>Enable glitch effect</span>
             <!-- <input type="checkbox" id="switch"> -->
             
               <div class="switch-toggle-theme text-center mb-4">

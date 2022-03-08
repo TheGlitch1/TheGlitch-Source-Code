@@ -6,7 +6,7 @@
                   <div class="slider-contents-baner">
                    <div class="slider-media-hoz">
                        <span :class="glitchStatus !='OFF' ? 'faded faded-right faded-top faded-style-2':''">
-                          <img src="../assets/undraw_laravel_and_vue_-59-tp.svg" alt="" sizes="" srcset="" width="95%" />
+                          <img src="../assets/lost_online.svg" alt="" sizes="" srcset="" width="95%" />
                         </span>
                   </div>
                  </div>

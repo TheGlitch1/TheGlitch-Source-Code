@@ -18,8 +18,8 @@
           <div class="cntent-center text-center">
             <ul class="swicth-content p-0 py-4">
               <li class="choice d-inline " v-for="item,index in resume" :key="index" @click="source=index,changedIndex='0'" :class="source == index ? 'active':''">
-                  <span class="btn-custom p-0 line-link m-2 ">
-                    <span><img :src="ItemIcon(index)"  alt="" sizes="" srcset="" class="logo-img" :class="source == index ? 'active':''" width="10%" /></span>
+                  <span class="btn-custom p-0 line-link">
+                    <span><img :src="ItemIcon(index)"  alt="" sizes="" srcset="" class="logo-img" :class="source == index ? 'active':''" width="13%" /></span>
                      {{index | capitalize}}
                   </span>
               </li> 
@@ -27,7 +27,7 @@
           </div>
           <div class="row no-margin">
             <div class="p-4 d-flex content-main" style="gap:8px;">
-              <ul class="tab-list text-primary-color" style="list-style:none;padding:7px">
+              <ul class="tab-list text-primary-color" style="list-style:none;padding:7px;margin-bottom: 0px;">
                 <!-- TODO:v-for of avaible tabs (education or experience) -->
                 <li class="tab" v-for="(item,j) in processedSource" :key="j" @click="changedIndex=j" :class="changedIndex == j ? 'active':''">
                   <div class="p-1">
@@ -147,6 +147,9 @@ export default {
     value = value.toString()
     return value.charAt(0).toUpperCase() + value.slice(1)
     }
+  },
+  watch: {
+    
   }
 
 }

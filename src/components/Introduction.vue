@@ -35,8 +35,9 @@
             <div class="slider-media-hoz text-center "> <!-- animate-float-up Addthis class to allow animation-->
               <span class="faded">
                 <!-- <img src="../assets/waneella-2.gif" alt="" sizes="" srcset="" width="100%" /> -->
-                <img src="../assets/undraw_hello.svg" alt="" sizes="" srcset="" width="100%" />
-                <span class="inception"><img src="../assets/website-bg.png" alt="" sizes="" srcset="" width="100%" />
+                <img src="../assets/laravelVueDev.svg" alt="" sizes="" srcset="" width="78%" />
+                <!-- <img src="../assets/undraw_hello.svg" alt="" sizes="" srcset="" width="100%" /> -->
+                <!-- <span class="inception"><img src="../assets/website-bg.png" alt="" sizes="" srcset="" width="100%" /> -->
                 </span>
               </span>
             </div>

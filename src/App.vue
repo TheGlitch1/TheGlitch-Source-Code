@@ -376,12 +376,12 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* text-align: center; */
-  color: #2c3e50;
+  color: #575757;
   margin-top: 60px;
   margin: 0;
 }
 .no-glitch-bg{
-  background-color: rgb(26, 43, 61);
+  background-color: rgb(50 49 68);
 }
 .text-primary-color{
   color:var(--text-primary-color)
