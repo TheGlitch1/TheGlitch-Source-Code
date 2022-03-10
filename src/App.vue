@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="no-glitch-bg">
+  <div id="app" :class="[highGlitch=='OFF'?'no-glitch-bg':'']">
     <!-- <div v-if="renderComponent"> -->
     <canvas id="canvas" ref="canvas"></canvas>
     <!-- </div> -->
@@ -353,7 +353,7 @@ export default {
   watch: {
     highGlitch: function (val) {
       this.switchGlitch()
-      val == "OFF" ? location.reload() : ''
+      // val == "OFF" ? location.reload() : ''
     }
   },
 };
@@ -426,7 +426,7 @@ canvas {
   padding: 0;
   margin: 0;
   /* width: 100%!important; */
-  z-index: 0;
+  z-index: -1;
   position: fixed;
   left: 0;
   top: 0;
