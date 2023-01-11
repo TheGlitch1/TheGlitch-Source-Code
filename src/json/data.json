@@ -12,38 +12,50 @@
             },
             "button_2": {
                 "text": "Resume",
-                "link": "https:\/\/drive.google.com\/file\/d\/1BIB3C28zp34j2GsFpqI7NLsQnnf-KfqJ\/view?usp=sharing"
+                "link": "https:\/\/drive.google.com\/file\/d\/1aAN6NZd_9VCMtm0W9XWbzEl6z2Sg4bOi\/view?usp=sharing"
             }
         },
         "social": [{
                 "text": "Twitter",
                 "icon": "ti-twitter",
-                "link": "https:\/\/www.twitter.com\/Theglitch1"
+                "link": "https:\/\/www.twitter.com\/Theglitch1",
+                "active": ""
             },
             {
                 "text": "Linkedin",
                 "icon": "ti-linkedin",
-                "link": "https:\/\/www.linkedin.com\/in\/Yassine-Natij\/"
+                "link": "https:\/\/www.linkedin.com\/in\/Yassine-Natij\/",
+                "active": "1"
             },
             {
                 "text": "Instagram",
                 "icon": "ti-instagram",
-                "link": ""
+                "link": "",
+                "active": ""
             },
             {
                 "text": "Github",
                 "icon": "ti-github",
-                "link": "https:\/\/github.com\/TheGlitch1"
+                "link": "https:\/\/github.com\/TheGlitch1",
+                "active": "1"
             },
             {
                 "text": "StackOverflow",
                 "icon": "ti-stack-overflow",
-                "link": "https:\/\/stackoverflow.com\/users\/3370660\/theglitch1"
+                "link": "https:\/\/stackoverflow.com\/users\/13070846\/theglitch1",
+                "active": "1"
+            },
+            {
+                "text": "StackOverflow",
+                "icon": "ti-stack-overflow",
+                "link": "https:\/\/stackoverflow.com\/users\/3370660\/theglitch1",
+                "active": ""
             },
             {
                 "text": "Medium",
                 "icon": "fab fa-medium-m",
-                "link": "https:\/\/medium.com\/@Theglitch1"
+                "link": "https:\/\/medium.com\/@natij.yas",
+                "active": "1"
             }
         ]
     },
@@ -140,10 +152,10 @@
                     "block": "HTML",
                     "date": "November 2021 - NOW",
                     "title": "ATOS",
-                    "icon": "<img src=\"https:\/\/tinyurl.com/yck3vhux\" alt=\"place img\" width=\"9%\" >",
+                    "icon": "<img src=\"https:/\\/atos.net\/wp-content\/themes\/atos\/images\/atos-logo-white-2021.png\" alt=\"place img\" width=\"9%\" >",
                     "subtitle": "Full Stack Software Engineer",
-                    "description": "<p style=\"color: white;\"> Work in progress  <\/p>",
-                    "stack": ["Intersystem caché", "Laravel", "Vuejs", "Object Script", "JQuery", "Junkins", "JAVASCRIPT"],
+                    "description": "<li style=\"color: white;\"> Maintained the current back office webapp and added more appealing features for the client<\/li><li style=\"color: white;\"> Redesigned sections of the back office to ensure a more attractive and user friendly experience.<\/li><li style=\"color: white;\">Determined areas of improvements by regularly monitoring the business needs and active sprints developpements.<\/li><li style=\"color: white;\">Defined new Git processes among the teams. and maintined healthy branching workflows and Git repositories.<\/li><li style=\"color: white;\">Trained and supervised members of the team for ongoing reformatting/quality control projects.<\/li>",
+                    "stack": ["Intersystem caché", "Laravel", "Vuejs 2x", "Object Script", "JQuery", "Junkins", "JAVASCRIPT", "Git"],
                     "location": "Casablanca, Morocco"
                 },
                 {

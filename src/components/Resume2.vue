@@ -26,7 +26,7 @@
             </ul>
           </div>
           <div class="row no-margin">
-            <div class="p-4 d-flex content-main" style="gap:8px;">
+            <div class="p-4 d-flex flex-column flex-md-row content-main" style="gap:8px;">
               <ul class="tab-list text-primary-color" style="list-style:none;padding:7px;margin-bottom: 0px;">
                 <!-- TODO:v-for of avaible tabs (education or experience) -->
                 <li class="tab" v-for="(item,j) in processedSource" :key="j" @click="changedIndex=j" :class="changedIndex == j ? 'active':''">

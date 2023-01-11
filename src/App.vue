@@ -6,9 +6,8 @@
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
     <HeaderComponent :showform="openContact"  @openForm="updateOpenContact($event)" :glitchStatus="highGlitch" @glitchIt="updateHighGlitch($event)"/>
-    <IntroductionComponent  :profile = "profile" @glitchIt="updateHighGlitch($event)"/>
-    <AboutComponent :skills="data.skills" 
-      :profile="profile.about" :glitchStatus="highGlitch"/>
+    <IntroductionComponent  :profile ="profile.about" :social="profile.social" @glitchIt="updateHighGlitch($event)"/>
+    <AboutComponent :skills="data.skills" :profile="profile.about" :glitchStatus="highGlitch"/>
 
     <GithubProjectsComponent :projects="data.projects.entreprise"/>
     <ResumeComponent2 v-if="resumechild == 0" :resume="data.resume" />
@@ -18,8 +17,10 @@
     <!-- <ContactComponent :settings="settings" :showform="openContact" /> -->
     <ContactComponent :showform="openContact" @openForm="updateOpenContact($event)"  @openSettings="updateOpenSettings($event)"/>
     <SettingsComponent @openForm="updateOpenContact($event)" :showSettings="openSettings" @openSettings="updateOpenSettings($event)" :glitchStatus="highGlitch" @glitchIt="updateHighGlitch($event)"
-     :resumePar="resumechild" @resumeStyle="updateResumeStyle($event)" />
-    <!-- <FooterComponent /> -->
+     :resumePar="resumechild" @resumeStyle="updateResumeStyle($event)" ref="settings" @hook:mounted="componenetIsRendred()"/>
+   
+   <!-- <TutorialsComponent ref="tutorial"/> -->
+     <!-- <FooterComponent /> -->
 
     <!-- <section id="introduction"></section>
     <section id="aboutMe"></section>
@@ -41,6 +42,7 @@ import GithubProjectsComponent from "./components/GithubProjects.vue";
 import ContactComponent from "./components/Contact.vue";
 import SettingsComponent from "./components/Settings.vue";
 import FooterComponent from "./components/Footer.vue";
+import TutorialsComponent from './components/tutorials.vue';
 
 export default {
   name: "App",
@@ -53,8 +55,9 @@ export default {
     GithubProjectsComponent,
     ContactComponent,
     SettingsComponent,
-    FooterComponent
-  },
+    FooterComponent,
+    TutorialsComponent
+},
   data(){
     return{
       profile:json.settings,
@@ -62,7 +65,7 @@ export default {
       openContact :false,
       openSettings :false,
       glitchLvl:["OFF","glitch_1","glitch_2"],
-      highGlitch: localStorage.appTheme ? localStorage.appTheme : "glitch_1",
+      highGlitch: localStorage.appTheme ? localStorage.appTheme : "OFF",
       renderComponent: true,
       resumechild:0,
       appTheme: localStorage.appTheme ? localStorage.appTheme : "OFF",
@@ -348,13 +351,27 @@ export default {
 
       console.log(info);
       console.log(text, style);
-    }
+    },
+    componenetIsRendred() {
+      // Only execute this method if the child component is fully rendered
+      if (this.$refs.settings.isRendered && this.$refs.tutorial.isRendered) {
+          console.log("execute the conponent is rendred")
+        this.$refs.tutorial.updateTutorialPosition();
+      }
+    },
   },
   watch: {
     highGlitch: function (val) {
       this.switchGlitch()
       // val == "OFF" ? location.reload() : ''
-    }
+    },
+    // childWatcher: { //NOT WORKING
+    //   handler() {
+    //     if (this.$refs.settings.isRendered){
+    //       this.componenetIsRendred();
+    //     }
+    //   },
+    // }
   },
 };
 </script>
@@ -382,6 +399,9 @@ export default {
 }
 .no-glitch-bg{
   background-color: rgb(50 49 68);
+    background-image: url(./assets/star-bg.svg);
+    background-repeat: repeat-x;
+    background-position: center 0,0 0,0 0;
 }
 .text-primary-color{
   color:var(--text-primary-color)

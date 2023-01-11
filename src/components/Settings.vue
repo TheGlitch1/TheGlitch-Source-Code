@@ -87,10 +87,16 @@ export default {
       },
       glitchLvl:["OFF","glitch_1","glitch_2"],
       resume : ['Compact','Expend'],
+      isRendered:false
     }
   },
   mounted() {
     this.checkGlitch()
+    this.isRendered = true;
+
+  },
+  updated() { //NOT WORKING
+    this.isRendered = true;
   },
   computed: {
 

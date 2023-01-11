@@ -21,7 +21,7 @@
                         <div class="about-meta-links">
                             <ul class="listx2-button float-right">
                                 <li v-for="(btn, key) in aboutButtons" :key="key">
-                                    <a :href="btn.link" class="btn-custom btn-glitchy line-link"><span class="text-inner ">{{btn.text}}</span></a>
+                                    <a :href="btn.link" target="blank" class="btn-custom btn-glitchy line-link"><span class="text-inner ">{{btn.text}}</span></a>
                                 </li>
                             </ul>
                             

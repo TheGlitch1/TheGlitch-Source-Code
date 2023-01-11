@@ -24,7 +24,7 @@
               </p>
             </div>
             <div class="download-section">
-               <a href="https://drive.google.com/file/d/1BIB3C28zp34j2GsFpqI7NLsQnnf-KfqJ/view?usp=sharing" target="blank" class="btn-custom btn-glitchy line-link"><span class="text-inner ">Download</span></a>
+               <a :href="resume.link" target="blank" class="btn-custom btn-glitchy line-link"><span class="text-inner ">Download</span></a>
             </div>
         </div>
 
@@ -47,12 +47,15 @@
           <div class="social">
             <ul class="list-social inline-active text-secondary-color">
               <!-- <li>F</li> -->
-              <li>
+              <li v-for="(social,key) in activeSocials" :key="key">
+                <a :href="social.link" target="blank">{{social.text}}</a>
+              </li>
+              <!-- <li>
                 <a href="https://github.com/TheGlitch1">Github</a>
               </li>
               <li>
                 <a href="https://www.linkedin.com/in/yassine-natij/">LinkedIn</a>
-              </li>
+              </li> -->
             </ul>
           </div>
         </div>
@@ -67,12 +70,32 @@
 <script>
 export default {
   name: "IntroductionComponent",
+  props: {
+    profile: {
+      type: Object,
+      default: () => {
+        return {}
+      }
+    },
+    social: {
+      type: Array,
+      default: () => {
+        return []
+      }
+    }
+  },
   data() {
     return {
       //   logo: 'assets/img/logo/logo.svg',
       //   logoFallback: 'assets/img/logo/light-logo.png'
+      resume : this.profile.button_2,
       gl:false
     };
+  },
+  computed : {
+    activeSocials (){
+      return this.social.filter(item => item.active)
+    }
   },
   mounted() {
     // this.$nextTick(function() {
