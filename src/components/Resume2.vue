@@ -114,7 +114,6 @@ export default {
     },
      ItemIcon(index) {
        let imgPath= require(`../assets/${index}.svg`);
-       console.log(imgPath)
       return imgPath;
       
     }

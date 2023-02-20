@@ -5,7 +5,7 @@
                 <div class="col-12 col-md-5 d-none d-md-block">
                   <div class="slider-contents-baner">
                    <div class="slider-media-hoz">
-                       <span :class="glitchStatus !='OFF' ? 'faded faded-right faded-top faded-style-2':''">
+                       <span :class="glitchStatus !='OFF' ? glitchFadedEffect :''">
                           <img src="../assets/lost_online.svg" alt="" sizes="" srcset="" width="95%" />
                         </span>
                   </div>
@@ -21,7 +21,7 @@
                         <div class="about-meta-links">
                             <ul class="listx2-button float-right">
                                 <li v-for="(btn, key) in aboutButtons" :key="key">
-                                    <a :href="btn.link" target="blank" class="btn-custom btn-glitchy line-link"><span class="text-inner ">{{btn.text}}</span></a>
+                                    <a @click="btn.vue ? openForm() : ''" :href="btn.link" :target="btn.vue ? '':'blank'" class="btn-custom btn-glitchy line-link"><span class="text-inner ">{{btn.text}}</span></a>
                                 </li>
                             </ul>
                             
@@ -56,8 +56,15 @@ export default ({
       default:() => '',
     }
   },
-
+  data(){
+    return {
+      fadedStyle : true,
+    }
+  },
    computed: {
+    glitchFadedEffect(){
+      return this.fadedStyle ? 'faded faded-right faded-top faded-style-2' : ''
+    },
     leftSkills() {
       return this.skills.filter((skill) => skill.position === 'left')
     },
@@ -69,11 +76,13 @@ export default ({
         return [
           {
             text: this.profile.button_1.text,
-            link: this.profile.button_1.link
+            link: this.profile.button_1.link,
+            vue: true ,
           },
           {
             text: this.profile.button_2.text,
-            link: this.profile.button_2.link
+            link: this.profile.button_2.link,
+            vue: false,
           }
         ]
       } else {
@@ -91,7 +100,10 @@ export default ({
       return key === skills.length - 1
         ? 'skillbar '
         : 'skillbar '
-    }
+    },
+    openForm: function() {
+			this.$emit('openForm', true)
+		},
   }
 })
 </script>

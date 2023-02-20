@@ -145,6 +145,12 @@ header * {
 li.active,li:hover {
   color: #7943eb;
 }
+
+/* QUERIES FOR SMALL SCREENS */
+
+
+/* END */
+
 /* .slicknav_menu * {
 	box-sizing: border-box;
 }

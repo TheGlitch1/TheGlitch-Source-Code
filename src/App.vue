@@ -7,7 +7,7 @@
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
     <HeaderComponent :showform="openContact"  @openForm="updateOpenContact($event)" :glitchStatus="highGlitch" @glitchIt="updateHighGlitch($event)"/>
     <IntroductionComponent  :profile ="profile.about" :social="profile.social" @glitchIt="updateHighGlitch($event)"/>
-    <AboutComponent :skills="data.skills" :profile="profile.about" :glitchStatus="highGlitch"/>
+    <AboutComponent :skills="data.skills" :profile="profile.about" :glitchStatus="highGlitch" @openForm="updateOpenContact($event)"/>
 
     <GithubProjectsComponent :projects="data.projects.entreprise"/>
     <ResumeComponent2 v-if="resumechild == 0" :resume="data.resume" />
@@ -17,7 +17,8 @@
     <!-- <ContactComponent :settings="settings" :showform="openContact" /> -->
     <ContactComponent :showform="openContact" @openForm="updateOpenContact($event)"  @openSettings="updateOpenSettings($event)"/>
     <SettingsComponent @openForm="updateOpenContact($event)" :showSettings="openSettings" @openSettings="updateOpenSettings($event)" :glitchStatus="highGlitch" @glitchIt="updateHighGlitch($event)"
-     :resumePar="resumechild" @resumeStyle="updateResumeStyle($event)" ref="settings" @hook:mounted="componenetIsRendred()"/>
+     :resumePar="resumechild" @resumeStyle="updateResumeStyle($event)" ref="settings" /> 
+     <!-- @hook:mounted="componenetIsRendred()" -->
    
    <!-- <TutorialsComponent ref="tutorial"/> -->
      <!-- <FooterComponent /> -->
@@ -296,45 +297,6 @@ export default {
     updateResumeStyle(value){
       this.resumechild = value;
     },
-    printPicture(){
-       console.log(`                                                                                          
-                                                                                                                    
-                                                              ((/(#(((((.                                          
-                                                          *(((/(#((%%###%#(#(,                                      
-                                                      (((#%%%%%%#%%#%##%####(((                                    
-                                                    /(((((/,,,............,,*//(                                   
-                                                      (*,,......................*/.                                 
-                                                    (/,,,,,.....................,/.                                
-                                                    */,,,,,.....        .........**                                
-                                                    /**,,,........ .. ..,*///**..,*.                               
-                                                    /*,,/##/*///*,...,,,,.....,,,.,*..                             
-                                                    .*,,,***,,/*,*/,...,,,.##.//,...,..                             
-                                                    ,,,,,,****,,,,,,. .....,,........,.                             
-                                                    ,/.,,.........,,.. ....    ........                             
-                                                    ,*,,,,.......,.,,...,...  ......,..                             
-                                                    .,,,,,.......,****,..........,..                               
-                                                        ,,,,,,,,,,..,..,,...,,...,,,                                
-                                                        ,*,,,**((**,,,.,,,,,,,,,,..                                
-                                                          ,****,,,,,*/(*,,,,,,,,*,,.                                
-                                                          *////**,,.........,,**/*,,                                
-                                                          **/(#((/*,,,,,***((((*,,,,/(                              
-                                                    ###(*****/(###%####(##(/*,,,,,,,/##(*,                         
-                                                /(#%#%(*/*******///((////***,,...,,*(%####(((/*                    
-                                            /(####%%%%(****,,,,,*****,,,,,,,...,,,,*#%#######((#(((/               
-                                        */((#(#%%%#%%#%#%**,,,,,,,,***,,,,,.,,,.,,/#%%##############((/(*           
-                                    /((###(##########%%#%##%%#**,,,,,***,,,,,,((################(#(#((##((((/,      
-                              .(((((######%#######(######%%%#%%#%%#%%#%##%#%%%%#%###%%%##(#(###(##(##(#(#(#((((/   
-                            /(###########%%#####(###%%%##%#%%#####%######%#(#%###(######((####((((((###((###(###(/ 
-                            (#####%##%%#((##(###%%##(((((##########%#%#%%#######%##########(((((#(((/(#(((########((
-                          .#%%%%%#%########((((####(((###((##(((###%#%(%####((##(((/(##(/(#((((((((/((((############
-                          #%%%%#%%###((#(###((((((####(#(((##(#((((#((#((((##%(###############(((((((#(((#(#####%%##
-                          %%#%%%%#######((###((#(((((((##(#(##########%%%#######(###((((#((((((((((((###(###########
-                          %%%%%%%#(####(#(######(#/(((#((#((#(#########(######/(#(#(##(((((((((((((##(#((###(######%
-                          %%%%%%%%%#(#%########(((((#(((((#((((#(#/(//(##((((#((((((##(((#((((((((((###(##(####(%##%
-                          %%%%#%####%%%(#(((#(####(((##(#(###((#(#(#((#((#((((((((#((((((((((((############((#####%#
-                          %%%%#%%###%#%#####((######((#(((#(#(##(((##(((((#((((((((((((((((((/#(((##############%###
-                          `);
-    },
     hireMe(){
       var style = "font-size: 14px;" +
       "background: #65339c; /* fallback for old browsers */" + 
@@ -352,13 +314,13 @@ export default {
       console.log(info);
       console.log(text, style);
     },
-    componenetIsRendred() {
-      // Only execute this method if the child component is fully rendered
-      if (this.$refs.settings.isRendered && this.$refs.tutorial.isRendered) {
-          console.log("execute the conponent is rendred")
-        this.$refs.tutorial.updateTutorialPosition();
-      }
-    },
+    // componenetIsRendred() {
+    //   // Only execute this method if the child component is fully rendered
+    //   if (this.$refs.settings.isRendered && this.$refs.tutorial.isRendered) {
+    //       console.log("execute the conponent is rendred")
+    //     this.$refs.tutorial.updateTutorialPosition();
+    //   }
+    // },
   },
   watch: {
     highGlitch: function (val) {
