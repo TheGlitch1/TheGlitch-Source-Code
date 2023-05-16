@@ -2,8 +2,6 @@
   <div id="app" :class="[highGlitch=='OFF'?'no-glitch-bg':'']">
     <!-- <div v-if="renderComponent"> -->
     <canvas id="canvas" ref="canvas"></canvas>
-    <!-- </div> -->
-    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
     <HeaderComponent :showform="openContact"  @openForm="updateOpenContact($event)" :glitchStatus="highGlitch" @glitchIt="updateHighGlitch($event)"/>
     <IntroductionComponent  :profile ="profile.about" :social="profile.social" @glitchIt="updateHighGlitch($event)"/>
@@ -12,9 +10,6 @@
     <GithubProjectsComponent :projects="data.projects.entreprise"/>
     <ResumeComponent2 v-if="resumechild == 0" :resume="data.resume" />
     <ResumeComponent v-else :resume="data.resume" />
-
-
-    <!-- <ContactComponent :settings="settings" :showform="openContact" /> -->
     <ContactComponent :showform="openContact" @openForm="updateOpenContact($event)"  @openSettings="updateOpenSettings($event)"/>
     <SettingsComponent @openForm="updateOpenContact($event)" :showSettings="openSettings" @openSettings="updateOpenSettings($event)" :glitchStatus="highGlitch" @glitchIt="updateHighGlitch($event)"
      :resumePar="resumechild" @resumeStyle="updateResumeStyle($event)" ref="settings" /> 
@@ -22,12 +17,6 @@
    
    <!-- <TutorialsComponent ref="tutorial"/> -->
      <!-- <FooterComponent /> -->
-
-    <!-- <section id="introduction"></section>
-    <section id="aboutMe"></section>
-    <section id="Projects"></section>
-    <section id="Resume"></section> -->
-    <!-- <section id="Exp"></section> -->
   </div>
 </template>
 
