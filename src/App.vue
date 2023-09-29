@@ -16,7 +16,7 @@
      <!-- @hook:mounted="componenetIsRendred()" -->
    
    <!-- <TutorialsComponent ref="tutorial"/> -->
-     <!-- <FooterComponent /> -->
+     <FooterComponent />
   </div>
 </template>
 
@@ -31,8 +31,8 @@ import ResumeComponent2 from "./components/Resume2.vue";
 import GithubProjectsComponent from "./components/GithubProjects.vue";
 import ContactComponent from "./components/Contact.vue";
 import SettingsComponent from "./components/Settings.vue";
-import FooterComponent from "./components/Footer.vue";
 import TutorialsComponent from './components/tutorials.vue';
+import FooterComponent from './components/Footer.vue';
 
 export default {
   name: "App",
@@ -45,8 +45,8 @@ export default {
     GithubProjectsComponent,
     ContactComponent,
     SettingsComponent,
-    FooterComponent,
-    TutorialsComponent
+    TutorialsComponent,
+    FooterComponent
 },
   data(){
     return{

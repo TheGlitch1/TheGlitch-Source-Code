@@ -60,7 +60,8 @@
         ]
     },
     "data": {
-        "skills": [{
+        "skills": [
+            {
                 "title": "PHP (LARAVEL, WORDPRESS..)",
                 "percentage": 98,
                 "position": "right"
@@ -101,7 +102,8 @@
                 "position": "left"
             }
         ],
-        "interests": [{
+        "interests": [
+            {
                 "title": "Electronics & DIY",
                 "text": "Lorem ipsum dolor amet, consecte tempor incididunt ut labore dolore ber tur adipisicing elit.",
                 "icon": "fa fa-bolt"
@@ -118,7 +120,8 @@
             }
         ],
         "resume": {
-            "education": [{
+            "education": [
+                {
                     "order": -1,
                     "date": "July 2018 - 2018 August.",
                     "title": "13 37 POOL",
@@ -147,7 +150,8 @@
                 }
             ],
 
-            "experience": [{
+            "experience": [
+                {
                     "order": -6,
                     "block": "HTML",
                     "date": "November 2021 - NOW",
@@ -238,7 +242,8 @@
             ]
         },
         "projects": {
-            "entreprise": [{
+            "entreprise": [
+                {
                     "owner": "TheGlitch1",
                     "name": "My Cyber******",
                     "repo": "My Cyber******",
@@ -267,6 +272,32 @@
                     "type": "Corp"
                 }
             ]
-        }
+        },
+        "recommandations": [
+            {
+                "img-src": "https://media.licdn.com/dms/image/C5603AQHt2E917diWVw/profile-displayphoto-shrink_100_100/0/1557674964989?e=1701302400&v=beta&t=6uVFKK2jCekyVugASnVQS_in0s1Ger0xcpQxnOaTPEQ",
+                "from": "Emy Baudine",
+                "profile": "Digital Marketing Dreamer🦋 User first analyst📊",
+                "desc_recommendation":"Good listener, persevering and reliable, Yassine doesn't stop at providing a good technical solution. He also makes sure that the solution meets the need, and proactively suggests improvements to go even further. He is able to challenge solutions and give constructive feedback. He doesn't fear pressure, and is quick to react to more urgent requests. You can feel his ability to manage projects and/or teams. I can highly recommend him: you'll have no trouble entrusting your projects to him, they'll be in good hands. As far as I'm concerned, this collaboration was flawless!" 
+              },
+            {
+                "img-src": "https://media.licdn.com/dms/image/C4D03AQFjFsNhh_Qd5Q/profile-displayphoto-shrink_100_100/0/1636800620651?e=1701302400&v=beta&t=6JY_lS-WZwJ86IRbAx0grXFEEBQnB4SVw3V_LDRTCRg",
+                "from":"Thibault Roy",
+                "profile":"Manager Offensive Security - Deloitte France - Cyber",
+                "desc_recommendation":"Yassine m'a accompagné en tant que lead développeur sur une application PHP Laravel / Vue.JS. Il a fait preuve d'implication, de flexibilité et de professionnalisme pour livrer une version 1 stable et fonctionnelle ayant rempli pleinement ses objectifs. Merci Yassine ! Je recommande ses services."
+            },
+            {
+                "img-src": "https://media.licdn.com/dms/image/C5603AQF1nJQmAVtE_g/profile-displayphoto-shrink_100_100/0/1517672498978?e=1701302400&v=beta&t=FqAQmkRwvNHgwO8Zm1ldzyw6rBrhwH9TntFCyfGGNcc",
+                "from":"Hcham Abdeljalil",
+                "profile":"Digital manager, fullstack developer, web designer, and geek",
+                "desc_recommendation":"I'm pleased and feel privileged to have worked with Yassine, we built so many projects together and it always was a pleasant experience for us both. On top of being a skilled developer what i appreciate in Yassine is the fact that he has the communication skills to manage his projects directly and independently with our clients, he also has the right mindset during stressful and demanding situations. he's also flexible and a fast learner to any programming language your project may need, he literally was a self contained digital agency all by himself."
+            },
+            {
+                "img-src": "https://media.licdn.com/dms/image/C4D03AQGDUXeIhGoSHA/profile-displayphoto-shrink_100_100/0/1633709245080?e=1701302400&v=beta&t=bJCFCQeZ3FKo57OwrQkb5xpVk6VIlnq0sdcDP3Yda0g",
+                "from":"Khalil Adam AKOUCHTIM",
+                "profile":"Finance Transformation Manager and Tech Excellence Lead at Majorel",
+                "desc_recommendation":"I had the great pleasure of working with Yassine at Deloitte. He knows his way around people, he is good with the clients, does whatever it takes to help colleagues and gets things done. The collaboration was very smooth and his assistance definitely made a huge impact on the success of a couple projects we worked on. I highly recommend this profile which has always been able to demonstrate relevance and competence."
+            }
+        ]
     }
 }
