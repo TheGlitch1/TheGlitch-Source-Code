@@ -7,16 +7,18 @@
     <IntroductionComponent  :profile ="profile.about" :social="profile.social" @glitchIt="updateHighGlitch($event)"/>
     <AboutComponent :skills="data.skills" :profile="profile.about" :glitchStatus="highGlitch" @openForm="updateOpenContact($event)"/>
 
-    <GithubProjectsComponent :projects="data.projects.entreprise"/>
     <ResumeComponent2 v-if="resumechild == 0" :resume="data.resume" />
     <ResumeComponent v-else :resume="data.resume" />
+    <RecommendationsComponent :recommendations="data.recommandations" />
+    
+    <GithubProjectsComponent :projects="data.projects.entreprise"/>
     <ContactComponent :showform="openContact" @openForm="updateOpenContact($event)"  @openSettings="updateOpenSettings($event)"/>
     <SettingsComponent @openForm="updateOpenContact($event)" :showSettings="openSettings" @openSettings="updateOpenSettings($event)" :glitchStatus="highGlitch" @glitchIt="updateHighGlitch($event)"
      :resumePar="resumechild" @resumeStyle="updateResumeStyle($event)" ref="settings" /> 
      <!-- @hook:mounted="componenetIsRendred()" -->
    
-   <!-- <TutorialsComponent ref="tutorial"/> -->
-     <FooterComponent />
+    <!-- <TutorialsComponent ref="tutorial"/> -->
+    <FooterComponent />
   </div>
 </template>
 
@@ -31,7 +33,8 @@ import ResumeComponent2 from "./components/Resume2.vue";
 import GithubProjectsComponent from "./components/GithubProjects.vue";
 import ContactComponent from "./components/Contact.vue";
 import SettingsComponent from "./components/Settings.vue";
-import TutorialsComponent from './components/tutorials.vue';
+import TutorialsComponent from './components/tutorials2.vue';
+import RecommendationsComponent from './components/Recommendations.vue';
 import FooterComponent from './components/Footer.vue';
 
 export default {
@@ -46,6 +49,7 @@ export default {
     ContactComponent,
     SettingsComponent,
     TutorialsComponent,
+    RecommendationsComponent,
     FooterComponent
 },
   data(){

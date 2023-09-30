@@ -1,8 +1,8 @@
 <template>
   <section
-    id="contact"
-    class="contact text-primary-color"
-    :class="{ 'contact-full-width': showSettings }"
+    id="setting"
+    class="setting text-primary-color"
+    :class="{ 'setting-full-width': showSettings }"
   >
     <div class="container">
       <div class="row">
@@ -26,7 +26,7 @@
           </span>
         </div>
         <div class="col-12" :class="{ 'd-none': !showSettings }">
-          <div class="contact-form" :class="{ 'contact-form-active': !showSettings }">
+          <div class="setting-form" :class="{ 'setting-form-active': !showSettings }">
             <!-- toggle switch theme -->
             <span>Enable glitch effect</span>
             <!-- <input type="checkbox" id="switch"> -->
@@ -166,7 +166,7 @@ export default {
   cursor: pointer;
   padding: 2px;
 }
-.contact {
+.setting {
   position: fixed;
   width: 40px;
   background: rgb(90 46 187);
@@ -176,7 +176,7 @@ export default {
   transition: all 0.4s ease-in-out;
 }
 
-.contact.contact-full-width {
+.setting.setting-full-width {
   background: rgb(5, 5, 5);
   width: 350px;
   padding: 12px 21px;
@@ -184,13 +184,13 @@ export default {
   right: 0;
 }
 
-.contact-content {
+.setting-content {
   position: relative;
   padding: 30px;
   background: white;
 }
 
-.contact-form-active {
+.setting-form-active {
   display: none;
 }
 
@@ -316,7 +316,7 @@ background-color: rgb(46, 42, 42);
   color: white;
 } */
 @media (max-width: 767px) and (min-width: 320px) {
-  .contact.contact-full-width {
+  .setting.setting-full-width {
     /* top: 33%; */
     right: 0;
     width: 100vw;

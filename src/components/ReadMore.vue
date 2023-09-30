@@ -5,7 +5,7 @@
         <p v-else class="description">{{detailedDescription}}</p>
       </div>
       <div class="button-read-me offset-md-6 col-md-6 text-right" v-if="minIs">
-          <p class="readEvent text-right" :class="[load ? 'text-secondary-color' : 'text-primary-color']" @click="showMore()"> {{stateReading}} details</p>
+          <p class="readEvent text-right" :class="[load ? 'text-secondary-color' : 'text-primary-color']" @click.stop="showMore()"> {{stateReading}} details</p>
       </div>
   </div>
   
@@ -40,7 +40,7 @@ export default {
       }
     },
   methods:{
-    showMore(){
+    showMore(e){
       return !this.load ? (this.load = true, this.stateReading = "- less ")
        : (this.load = false, this.stateReading = "+ More ")
     }

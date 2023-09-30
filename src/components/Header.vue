@@ -3,9 +3,12 @@
     <div class="container-fulid">
       <div class="row">
       <!-- start mainmenu. -->
+      <div class="menu-icon" @click="toggleMenu">
+        ☰
+      </div>
       <div class="text-center col-md-12 col-sm-12">
-        <div class="mainmenu ">
-          <ul id="nav" class="list-inline">
+        <div class="mainmenu" v-if="isMenuVisible">
+          <ul id="nav" class="list-inline" role="navigation">
             <li class="header-nav current">
               <a href="#home">Home</a>
             </li>
@@ -13,10 +16,13 @@
               <a href="#about">About</a>
             </li>
             <li class="header-nav">
-              <a href="#Projects">Projects ( Github )</a>
+              <a href="#resume">Resume</a>
             </li>
             <li class="header-nav">
-              <a href="#resume">Resume</a>
+              <a href="#recommendations">Recommendations</a>
+            </li>
+            <li class="header-nav">
+              <a href="#Projects">Projects ( Github )</a>
             </li>
             <li class="header-nav" >
               <a href="#contact" @click="openForm">Contact</a>
@@ -69,6 +75,7 @@ export default {
   props :['showform','glitchStatus'],
   data() {
     return {
+      isMenuVisible: window.innerWidth > 768 ? true : false,
     //   logo: 'assets/img/logo/logo.svg',
     //   logoFallback: 'assets/img/logo/light-logo.png'
     glitchlevel:this.glitchStatus,
@@ -76,10 +83,19 @@ export default {
     }
   },
   mounted() {
-    
+    window.addEventListener('resize', this.handleResize);
+    this.handleResize();
   },
-  
+  beforeDestroy() {
+    window.removeEventListener('resize', this.handleResize);
+  },
   methods: {
+    toggleMenu() {
+      this.isMenuVisible = !this.isMenuVisible;
+    },
+    handleResize() {
+        this.isMenuVisible = window.innerWidth > 768;
+    },
     activeLang(lang) {
     //   return this.$i18n.locale === lang
     },
@@ -105,46 +121,63 @@ export default {
 header * {
   font-family: Roboto Mono;
 }
-/* .slicknav_menu {
-	font-size: 16px;
-	box-sizing: border-box;
-	background: transparent;
-	padding: 1rem 0rem;
-} */
-.header-top{
+
+.header-top {
   position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 99;
-    background-color: #1a191c;
+  top: 0;
+  width: 100%;
+  z-index: 99;
+  background-color: #1a191c;
 }
-.mainmenu,.secect-language {
-    /* text-align: center; */
-    margin-top: 8px;
+.menu-icon {
+    display: none; 
 }
+
+.mainmenu {
+    display: block; 
+}
+
+.mainmenu,
+.secect-language {
+  margin-top: 8px;
+}
+
 .mainmenu ul li a {
-    font-size: 12px;
-    font-weight: 500;
-    padding: 12px 10px;
-    color: #c0c4d6;
-    text-transform: uppercase;
-    font-family: Roboto Mono;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 12px 10px;
+  color: #c0c4d6;
+  text-transform: uppercase;
 }
-/* .header-nav{
+
+.list-inline > li {
   display: inline-block;
   padding: 6px 9px;
-
-} */
-.list-inline>li {
-    display: inline-block;
-    padding: 6px 9px;
-    color: #c0c4d6;
-    transition: all .2s ease-in-out;
+  color: #c0c4d6;
+  transition: all .2s ease-in-out;
 }
 
-li.active,li:hover {
+li.active,
+li:hover {
   color: #7943eb;
 }
+
+li:focus,
+li:hover {
+  color: #7943eb;
+}
+
+/* Media Queries for Responsiveness */
+@media only screen and (max-width: 768px) {
+  .mainmenu.active {
+    display: block; /* show the main menu on mobile when active */
+  }
+
+  .menu-icon {
+    display: block;  /* show menu icon */
+  }
+}
+
 
 /* QUERIES FOR SMALL SCREENS */
 
