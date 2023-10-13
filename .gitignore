@@ -6,6 +6,7 @@ node_modules
 # local env files
 .env.local
 .env.*.local
+TheGlitch1.github.io
 
 # Log files
 npm-debug.log*

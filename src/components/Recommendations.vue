@@ -14,12 +14,16 @@
         <div class="row no-margin">
           <div v-for="(rec,index) in recommendations" :key="rec.index" class="recommendation-card-link col-md-6 col col-xs-1" @click="navigateToLinkedIn">
             <div class="recommendation-card">
-              <img :src="'https://corsproxy.io/?'+rec['img-src']" alt="Profile Picture" class="profile-image">
-              <div class="recommendation-details">
-                <p class="from">{{ rec.from }}</p>
-                <p class="profile">{{ rec.profile }}</p>
-                <ReadMore class="readMore text-secondary-color" :content="rec.desc_recommendation " :showMin=true :min=220 />
+              <div class="recommendation-header">
+                <div>
+                  <img :src="'https://corsproxy.io/?' + rec['img-src']" alt="Profile Picture" class="profile-image">
+                </div>
+                <div class="recommendation-details my-2">
+                  <p class="from">{{ rec.from }}</p>
+                  <p class="profile" :title="rec.profile">{{ rec.profile | preview }}</p>
+                </div>
               </div>
+              <ReadMore class="readMore text-secondary-color" :content="rec.desc_recommendation " :showMin=true :min=220 />
             </div>
           </div>
         </div>
@@ -46,6 +50,11 @@ export default {
   methods: {
     navigateToLinkedIn() {
       window.open("https://www.linkedin.com/in/yassine-natij/details/recommendations/", "_blank");
+    },
+  },
+  filters: {
+    preview(value) {
+      return value.length >50 ?  value.substring(0, 50) + '...' : value;
     }
   }
 }
@@ -76,17 +85,21 @@ h2 {
   background: #060606;
   padding: 10px;
   margin:5px 0px;
-  
+  flex-wrap:wrap;
 }
 
+.recommendation-header{
+  display: flex;
+  align-items: center;
+}
 .recommendation-card-link:hover .recommendation-card {
   /* opacity: 0.7; */
   background: #1a191c29;
 }
 
 .profile-image {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   margin-right: 15px;
 }
@@ -95,6 +108,7 @@ h2 {
   font-weight: bold;
   font-size: 18px;
   color: white;
+  margin: 0;
 }
 
 .profile {
