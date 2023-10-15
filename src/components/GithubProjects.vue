@@ -23,7 +23,7 @@
       </div>
       <!-- row end -->
       <carousel
-        :per-page="3"
+        :per-page="computedPerPage"
         :autoplay="false"
         :autoplay-hover-pause="true"
         :navigation-enabled="true"
@@ -106,13 +106,21 @@ import ReadMore from './ReadMore.vue';
         repos: [],
         stacks:[],
         filter: "All",
-        sort: ["A-Z","Updated","Watchers","Stars"]
+        sort: ["A-Z","Updated","Watchers","Stars"],
         // colors: style
+        windowWidth : window.innerWidth,
 
       }
     },
     created(){
       this.getRepo();
+      
+    },
+    mounted() {
+      window.addEventListener('resize',this.handleResize);
+    },
+    beforeDestroy() {
+      window.removeEventListener('resize',this.handleResize);
     },
     computed: {
       processedReps() {
@@ -123,6 +131,9 @@ import ReadMore from './ReadMore.vue';
                 (r.language && r.language == this.filter) ||
                 (r.language == null && this.filter == 'Other')
             )
+      },
+      computedPerPage(){
+        return this.windowWidth > 768 ? 3 : 1;
       }
    },
     methods:{
@@ -183,6 +194,9 @@ import ReadMore from './ReadMore.vue';
               .map(r => (r.language != null ? r.language : r.language = 'Other')).sort()
           )
         ]
+      },
+      handleResize() {
+        return this.windowWidth = window.innerWidth
       },
     },
     filters:{

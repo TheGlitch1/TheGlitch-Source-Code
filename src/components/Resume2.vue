@@ -218,4 +218,20 @@ export default {
 .item-stack {
     font-size: 12px;
 }
+
+.section-tab-details{
+  word-break: break-word;
+}
+@media (max-width: 767px) and (min-width: 320px){
+
+.tab-list {
+  display: flex;
+  flex-direction: column;
+  transform: rotate(-90deg);
+} 
+
+.tab {
+
+} 
+}
 </style>
