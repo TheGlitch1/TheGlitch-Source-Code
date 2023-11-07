@@ -5,8 +5,8 @@
     :class="{ 'setting-full-width': showSettings }"
   >
     <div class="container">
-      <div class="row">
-        <div class="col-1 animate-pulse-right" @click="updateState">
+      <div class="row" id="home-intro">
+        <div id="setting-action" class="col-1 animate-pulse-right" @click="updateState">
           <span
             class="icon h3"
             :class="[showSettings ? 'text-special-color font-weight-bold' : '']"
@@ -36,7 +36,7 @@
                     <div class="toggle-theme" :style='"transform: translateX(calc("+ tab +"*100%));"' :class={}></div>
                       <div class="names-theme">
                           <div class="switch-option-3" @click="switchLevel(0)" :class="{'active': tab=='0' }"><span>OFF</span></div>
-                          <div class="switch-option-3" @click="switchLevel(1)" :class="{'active': tab=='1' }"><span>Level1</span></div>
+                          <div id="switch-g-2" class="switch-option-3" @click="switchLevel(1)" :class="{'active': tab=='1' }"><span>Level1</span></div>
                           <div class="switch-option-3" @click="switchLevel(2)" :class="{'active': tab=='2' }"><span>Level2</span></div>
                       </div>
                     </div>

@@ -32,7 +32,7 @@
 </template>
   
 <script>
-import ReadMore from './ReadMore.vue';
+import ReadMore from './reusables/ReadMore.vue';
 
 export default {
   components:{

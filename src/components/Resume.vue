@@ -70,7 +70,7 @@
 </template>
 <script>
 // import ReadMore from "./components/ReadMore.vue";
-import ReadMore from './ReadMore.vue';
+import ReadMore from './reusables/ReadMore.vue';
 export default {
   components:{
     ReadMore

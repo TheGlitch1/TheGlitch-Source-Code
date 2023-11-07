@@ -9,7 +9,11 @@ import VueAxios from 'vue-axios'
 import 'bootstrap/dist/css/bootstrap.css'
 import './assets/style.css'
 // import "https://cdn.lordicon.com/lusqsztk.js"
+import VueTour from 'vue-tour'
 
+require('vue-tour/dist/vue-tour.css');
+
+Vue.use(VueTour);
 Vue.use(VueCarousel);
 Vue.use(VueAxios, axios)
 
@@ -24,6 +28,7 @@ Vue.config.productionTip = false
 // Vue.component('HeaderComponent ',Header )
 // Vue.component('IntroductionComponent',Introduction)
 // Vue.component('AboutComponent',About)
+
 
 
 new Vue({

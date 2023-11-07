@@ -2,7 +2,7 @@
     <section id="home" class="Intro-Section relative">
 
     <div class="container Intro-content">
-      <div class="row">
+      <div id="step-intro" class="row">
         <div class="col-12 col-md-6">
           <div class="slider-contents">
             <div class="slider-text">

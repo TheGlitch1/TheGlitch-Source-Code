@@ -18,12 +18,15 @@
      <!-- @hook:mounted="componenetIsRendred()" -->
    
     <!-- <TutorialsComponent ref="tutorial"/> -->
+    <v-tour  ref="myTour" name="myTour" :steps="steps" :callbacks="myCallbacks" :options="customeOptions"></v-tour>
     <FooterComponent />
   </div>
 </template>
 
 <script>
 import json from './json/data.json'
+// import tourData from './json/tour.json'
+import { steps } from './helpers/tour-steps';
 
 import HeaderComponent from "./components/Header.vue";
 import IntroductionComponent from "./components/Introduction.vue";
@@ -63,16 +66,25 @@ export default {
       renderComponent: true,
       resumechild:0,
       appTheme: localStorage.appTheme ? localStorage.appTheme : "OFF",
-      
+      tourState : (localStorage.getItem('tourFinished') === 'true' || this.$tours['myTour']?.isRunning) ?? false,
+      steps,
+      isNextEnabled: true,
+      myCallbacks: {
+          onPreviousStep: this.handleTourPrevious,
+          onNextStep: this.handleTourNext,
+          onFinish: (tour) => {
+              localStorage.setItem('tourSkipped', true);
+            }
+        },
     }
   },
   created(){
     document.title = "Yassine NATIJ : Personal web site "
   },
   mounted() {
-    this.hireMe()
+    this.hireMe();
     this.switchGlitch();
-
+    this.startTour();
   },
   methods: {
     forceRerender() {
@@ -282,13 +294,27 @@ export default {
       this.openContact = value
     },
     updateOpenSettings(value){
-      this.openSettings = value
+      this.openSettings = value;
     },
     updateHighGlitch(value){
       this.highGlitch = value;
     },
     updateResumeStyle(value){
       this.resumechild = value;
+    },
+    handleTourNext(step) {
+      const next = this.steps[step+1]
+      this.isNextEnabled = true;
+      if (next.requireComponent && !this[next.trigger]) {
+       this.isNextEnabled = false;
+      }
+      if (step?.target === '#setting' || step === 1) {
+        // this.updateOpenSettings(true); // Open settings if this is the settings step
+        // this.isNextEnabled = false;
+      }
+    },
+    handleTourPrevious(step){
+      this.isNextEnabled = true;
     },
     hireMe(){
       var style = "font-size: 14px;" +
@@ -307,6 +333,14 @@ export default {
       console.log(info);
       console.log(text, style);
     },
+    execNextStep(){
+      this.isNextEnabled = true;
+      this.$nextTick(() => {
+        setTimeout(() => {
+          this.$tours['myTour'].nextStep();
+        }, 300); 
+      });
+    },
     // componenetIsRendred() {
     //   // Only execute this method if the child component is fully rendered
     //   if (this.$refs.settings.isRendered && this.$refs.tutorial.isRendered) {
@@ -314,11 +348,31 @@ export default {
     //     this.$refs.tutorial.updateTutorialPosition();
     //   }
     // },
+    startTour(){
+      !this.tourState ? this.$tours['myTour'].start() :"";
+    },
   },
+  computed: {
+  customeOptions() {
+    return {
+      enabledButtons: {
+        'buttonNext': this.isNextEnabled,
+        'buttonPrevious': true,
+      }
+    };
+  }
+},
   watch: {
     highGlitch: function (val) {
       this.switchGlitch()
       // val == "OFF" ? location.reload() : ''
+    },
+    openSettings: function(val) {
+      // console.log("this.=tourState ", this.$tours['myTour'].isRunning )
+      if(val === true && this.$tours['myTour'].isRunning) this.execNextStep();
+    },
+    openContact: function(val) {
+      if(val === true && this.$tours['myTour'].isRunning) this.execNextStep();
     },
     // childWatcher: { //NOT WORKING
     //   handler() {
