@@ -1,12 +1,12 @@
 export const steps = [
     {
-      target: "#step-intro",
+      target: ".header-top",
       header: {
         title: "Welcome Aboard!"
       },
       content: "Kickstart your journey with handy <strong>side buttons</strong> – your gateway to awesome!",
       params: {
-        placement: 'top'
+        // placement: 'bottom'
       },
      
     },

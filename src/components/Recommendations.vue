@@ -16,7 +16,7 @@
             <div class="recommendation-card">
               <div class="recommendation-header">
                 <div>
-                  <img :src="'https://corsproxy.io/?' + rec['img-src']" alt="Profile Picture" class="profile-image">
+                  <img :src="'https://corsproxy.io/?' + rec['img-src']" @error="hideImage" alt="Profile Picture" class="profile-image">
                 </div>
                 <div class="recommendation-details my-2">
                   <p class="from">{{ rec.from }}</p>
@@ -50,6 +50,9 @@ export default {
   methods: {
     navigateToLinkedIn() {
       window.open("https://www.linkedin.com/in/yassine-natij/details/recommendations/", "_blank");
+    },
+    hideImage(event) {
+      event.target.style.display = 'none';
     },
   },
   filters: {

@@ -176,7 +176,8 @@ import ReadMore from './reusables/ReadMore.vue';
             });
             // this.repos.sort((a, b) => (a.stargazers < b.stargazers ? 1 : -1))
             // this.repos.sort((a, b) => (a.watchers < b.watchers ? 1 : -1))
-            this.repos = this.repos.filter(repo => !repo.full_name.match("TheGlitch1.github.io"))
+            this.repos = this.repos.filter(repo => !repo.fork && !repo.full_name.match("TheGlitch1.github.io"))
+            // this.repos = this.repos.filter(repo => !repo.fork)
             this.repos = [...this.repos,...this.projects]
             this.repos.sort(function(a,b){
                   return new Date(b.updated_at) - new Date(a.updated_at);
