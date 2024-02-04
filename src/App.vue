@@ -4,7 +4,7 @@
     <canvas id="canvas" ref="canvas"></canvas>
     <!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
     <HeaderComponent :showform="openContact"  @openForm="updateOpenContact($event)" :glitchStatus="highGlitch" @glitchIt="updateHighGlitch($event)"/>
-    <IntroductionComponent  :profile ="profile.about" :social="profile.social" @glitchIt="updateHighGlitch($event)"/>
+    <IntroductionComponent  :profile ="profile.about" :social="profile.social" :glitchStatus="highGlitch" @glitchIt="updateHighGlitch($event)"/>
     <AboutComponent :skills="data.skills" :profile="profile.about" :glitchStatus="highGlitch" @openForm="updateOpenContact($event)"/>
 
     <ResumeComponent2 v-if="resumechild == 0" :resume="data.resume" />

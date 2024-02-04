@@ -8,6 +8,7 @@ import VueAxios from 'vue-axios'
 
 import 'bootstrap/dist/css/bootstrap.css'
 import './assets/style.css'
+import './assets/glitch-style.css'
 // import "https://cdn.lordicon.com/lusqsztk.js"
 import VueTour from 'vue-tour'
 

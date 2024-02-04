@@ -12,9 +12,12 @@
               <hr>
               <h1 class="text-3r text-secondary-color">
                 I'm
-                <span class="name glitch-text" >
+                <span v-if="glitchStatus !='OFF'" class="name glitch-text" >
                   <span class="name glitch-text glitch-span" aria-hidden="true">Yassine</span>
                   <span class="name glitch-text glitch-span" aria-hidden="true">Yassine</span>
+                  Yassine
+                </span>
+                <span v-else class="fw-bolder">
                   Yassine
                 </span>
                 NATIJ
@@ -32,14 +35,15 @@
 
         <div class="col-12 col-md-6 d-none d-md-block">
           <div class="slider-contents-baner relative">
-            <div class="slider-media-hoz text-center "> <!-- animate-float-up Addthis class to allow animation-->
+            <div class="slider-media-hoz text-center" :class="isAnimated"> <!-- animate-float-up Addthis class to allow animation-->
               <span class="faded">
                 <!-- <img src="../assets/waneella-2.gif" alt="" sizes="" srcset="" width="100%" /> -->
-                <img src="../assets/laravelVueDev.svg" alt="" sizes="" srcset="" width="78%" />
+                <img v-if="glitchStatus =='OFF'" src="../assets/laravelVueDev.svg" alt="" sizes="" srcset="" width="78%" />
+                <img v-else src="../assets/Isometric/introduction.pic3.png" alt="" sizes="" srcset="" width="100%" />
                 <!-- <img src="../assets/undraw_hello.svg" alt="" sizes="" srcset="" width="100%" /> -->
                 <!-- <span class="inception"><img src="../assets/website-bg.png" alt="" sizes="" srcset="" width="100%" /> -->
                 </span>
-              </span>
+              <span></span>
             </div>
           </div>
         </div>
@@ -82,6 +86,10 @@ export default {
       default: () => {
         return []
       }
+    },
+  glitchStatus :{
+    type: String,
+      default:() => 'OFF',
     }
   },
   data() {
@@ -95,6 +103,9 @@ export default {
   computed : {
     activeSocials (){
       return this.social.filter(item => item.active)
+    },
+    isAnimated() {
+      return this.glitchStatus != 'OFF' ? 'animate-float-up' : ''
     }
   },
   mounted() {

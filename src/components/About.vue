@@ -53,7 +53,7 @@ export default ({
     },
     glitchStatus:{
       type: String,
-      default:() => '',
+      default:() => 'OFF',
     }
   },
   data(){
